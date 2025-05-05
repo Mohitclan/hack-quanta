@@ -65,8 +65,8 @@ export default {
 				},
 			},
 			fontFamily: {
-				'cyber': ['Space Grotesk', 'sans-serif'],
-				'display': ['Orbitron', 'sans-serif'],
+				'cyber': ['Chakra Petch', 'Space Grotesk', 'sans-serif'],
+				'display': ['Orbitron', 'Syncopate', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -113,7 +113,11 @@ export default {
 					'40%': { transform: 'translate(-5px, -5px)' },
 					'60%': { transform: 'translate(5px, 5px)' },
 					'80%': { transform: 'translate(5px, -5px)' },
-				}
+				},
+                'text-shimmer': {
+                    '0%': { backgroundPosition: '0% 50%' },
+                    '100%': { backgroundPosition: '100% 50%' }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -123,6 +127,7 @@ export default {
 				'float': 'float 6s ease-in-out infinite',
 				'grid-fade': 'grid-fade 8s infinite',
 				'glitch': 'glitch 0.5s infinite',
+                'text-shimmer': 'text-shimmer 2s linear infinite'
 			}
 		}
 	},

@@ -10,11 +10,21 @@ const Index = () => {
   useEffect(() => {
     // Scroll animation for reveal elements
     const revealElements = document.querySelectorAll('.reveal');
+    const fadeElements = document.querySelectorAll('.fade-in-up');
     
     const revealCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
+        }
+      });
+    };
+    
+    const fadeCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100');
+          entry.target.classList.add('translate-y-0');
         }
       });
     };
@@ -24,10 +34,17 @@ const Index = () => {
       rootMargin: "0px 0px -100px 0px" // Ensures elements start animating a bit before they come into view
     });
 
+    const fadeObserver = new IntersectionObserver(fadeCallback, {
+      threshold: 0.1,
+      rootMargin: "0px 0px -100px 0px"
+    });
+
     revealElements.forEach(el => observer.observe(el));
+    fadeElements.forEach(el => fadeObserver.observe(el));
 
     return () => {
       revealElements.forEach(el => observer.unobserve(el));
+      fadeElements.forEach(el => fadeObserver.unobserve(el));
     };
   }, []);
 

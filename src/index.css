@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Chakra+Petch:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -103,6 +103,7 @@
 
 .cyber-box {
   @apply relative p-1 overflow-hidden;
+  box-shadow: 0 0 15px rgba(255, 0, 204, 0.3);
 }
 
 .cyber-box::before {
@@ -174,7 +175,61 @@
   opacity: 1;
 }
 
+.fade-in-up {
+  transform: translateY(40px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
 .horizontal-line {
   height: 2px;
   background: linear-gradient(to right, transparent, rgba(255, 0, 204, 0.8), rgba(0, 255, 255, 0.8), transparent);
+}
+
+/* New animations */
+@keyframes pulse-border {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 204, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 0, 204, 0);
+  }
+}
+
+@keyframes text-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0.8;
+  }
+  66% {
+    opacity: 0.4;
+  }
+}
+
+/* Add new datalines animation */
+.datalines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.dataline {
+  position: absolute;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(0, 255, 255, 0), rgba(0, 255, 255, 0.5), rgba(0, 255, 255, 0));
+  animation: dataline-fall linear infinite;
+}
+
+@keyframes dataline-fall {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
 }

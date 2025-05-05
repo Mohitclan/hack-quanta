@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 const ComingSoonSection = () => {
   const glitchRef = useRef<HTMLHeadingElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const glitchElement = glitchRef.current;
@@ -39,6 +40,9 @@ const ComingSoonSection = () => {
     const observer = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting) {
         startGlitchEffect();
+        if (contentRef.current) {
+          contentRef.current.classList.add('fade-in-up');
+        }
       } else {
         clearInterval(glitchInterval);
       }
@@ -64,7 +68,7 @@ const ComingSoonSection = () => {
     >
       <div className="grid-background animate-grid-fade"></div>
       
-      <div className="container mx-auto px-4 z-10 text-center">
+      <div ref={contentRef} className="container mx-auto px-4 z-10 text-center opacity-0 transition-opacity duration-1000">
         <h2 
           ref={glitchRef}
           className="text-5xl md:text-7xl lg:text-8xl font-display tracking-widest mb-8"
@@ -106,7 +110,7 @@ const ComingSoonSection = () => {
           <p className="text-gray-300 mb-6">Want to be the first to know when we announce more details?</p>
           <a 
             href="#notify" 
-            className="cyber-box inline-block px-8 py-3 font-display"
+            className="cyber-box inline-block px-8 py-3 font-display hover:scale-105 transition-transform duration-300"
           >
             GET NOTIFIED
           </a>

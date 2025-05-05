@@ -24,7 +24,7 @@ const HeroSection = () => {
     <section id="home" className="min-h-screen relative flex flex-col items-center justify-center pt-16 overflow-hidden">
       <div ref={gridRef} className="grid-background animate-grid-fade"></div>
       
-      <div className="container mx-auto px-4 z-10 flex flex-col lg:flex-row items-center gap-8">
+      <div className="container mx-auto px-4 z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
         <div className="lg:w-1/2 flex flex-col items-center lg:items-start">
           <div className="mb-8 animate-float">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display tracking-wider text-center lg:text-left">
@@ -47,16 +47,16 @@ const HeroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            <a href="#register" className="cyber-box px-6 py-3 text-center font-display">
+            <a href="#register" className="cyber-box px-6 py-3 text-center font-display hover:scale-105 transition-transform duration-300">
               REGISTER NOW
             </a>
-            <a href="#about" className="px-6 py-3 border border-neon-cyan/30 text-center hover:border-neon-cyan transition-colors duration-300 font-display">
+            <a href="#about" className="px-6 py-3 border border-neon-cyan/30 text-center hover:border-neon-cyan hover:scale-105 transition-all duration-300 font-display">
               LEARN MORE
             </a>
           </div>
         </div>
         
-        <div className="lg:w-1/2 cyber-box p-1 reveal">
+        <div className="lg:w-2/5 cyber-box p-1 reveal">
           <div className="bg-cyber-darkPurple p-2">
             <img 
               src="/lovable-uploads/f8bdac24-4f24-4a85-9c30-6b758c2c8a47.png" 
