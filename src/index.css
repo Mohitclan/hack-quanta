@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,22 +36,6 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -79,14 +66,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -96,6 +75,106 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-cyber-black text-white font-cyber overflow-x-hidden;
+    background-image: 
+      linear-gradient(to right, rgba(255, 0, 204, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 0, 204, 0.08) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-attachment: fixed;
   }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(26, 0, 51, 0.8);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 204, 0.5);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 0, 204, 0.8);
+  }
+}
+
+.cyber-box {
+  @apply relative p-1 overflow-hidden;
+}
+
+.cyber-box::before {
+  content: '';
+  @apply absolute inset-0 z-[-1] bg-gradient-to-r from-neon-pink via-neon-cyan to-neon-pink opacity-70;
+  animation: rotate 3s linear infinite;
+}
+
+.cyber-box::after {
+  content: '';
+  @apply absolute inset-[2px] z-[-1] bg-cyber-black;
+}
+
+.neon-text {
+  @apply font-display text-white;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+               0 0 10px rgba(255, 0, 204, 0.8),
+               0 0 15px rgba(255, 0, 204, 0.6),
+               0 0 20px rgba(255, 0, 204, 0.4);
+}
+
+.neon-text-cyan {
+  @apply font-display text-white;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+               0 0 10px rgba(0, 255, 255, 0.8),
+               0 0 15px rgba(0, 255, 255, 0.6),
+               0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.chrome-text {
+  @apply font-display text-transparent bg-clip-text;
+  background-image: linear-gradient(135deg, #ffffff 0%, #f2f2f2 10%, #ffffff 20%, #ffffff 30%, #f2f2f2 40%, #e6e6e6 50%, #f2f2f2 60%, #ffffff 70%, #ffffff 80%, #f2f2f2 90%, #ffffff 100%);
+}
+
+.grid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 0, 204, 0.15) 1px, transparent 1px);
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: center top;
+  animation: grid-fade 8s infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.horizontal-line {
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(255, 0, 204, 0.8), rgba(0, 255, 255, 0.8), transparent);
 }
