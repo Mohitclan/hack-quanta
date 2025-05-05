@@ -41,7 +41,7 @@ const ComingSoonSection = () => {
       if (entries[0].isIntersecting) {
         startGlitchEffect();
         if (contentRef.current) {
-          contentRef.current.classList.add('fade-in-up');
+          contentRef.current.classList.add('opacity-100', 'translate-y-0');
         }
       } else {
         clearInterval(glitchInterval);
@@ -66,9 +66,29 @@ const ComingSoonSection = () => {
       ref={sectionRef} 
       className="min-h-[60vh] relative flex flex-col items-center justify-center py-20 overflow-hidden"
     >
+      {/* Animated grid background */}
       <div className="grid-background animate-grid-fade"></div>
       
-      <div ref={contentRef} className="container mx-auto px-4 z-10 text-center opacity-0 transition-opacity duration-1000">
+      {/* Animated data lines in the background */}
+      <div className="datalines">
+        {[...Array(20)].map((_, i) => (
+          <div 
+            key={i} 
+            className="dataline" 
+            style={{
+              left: `${Math.random() * 100}%`,
+              height: `${Math.random() * 40 + 20}vh`,
+              opacity: Math.random() * 0.5 + 0.2,
+              animation: `dataline-fall ${Math.random() * 8 + 4}s linear infinite`
+            }}
+          ></div>
+        ))}
+      </div>
+      
+      <div 
+        ref={contentRef} 
+        className="container mx-auto px-4 z-10 text-center opacity-0 translate-y-10 transition-all duration-1000 transform"
+      >
         <h2 
           ref={glitchRef}
           className="text-5xl md:text-7xl lg:text-8xl font-display tracking-widest mb-8"
@@ -77,7 +97,7 @@ const ComingSoonSection = () => {
           <span className="neon-text-cyan ml-4">SOON</span>
         </h2>
         
-        <div className="cyber-box max-w-lg mx-auto">
+        <div className="cyber-box max-w-lg mx-auto transform hover:scale-[1.02] transition-transform duration-300">
           <div className="bg-cyber-darkPurple p-6">
             <h3 className="font-display text-2xl mb-4 text-white">EVENT DETAILS</h3>
             <ul className="space-y-4 text-left">
@@ -112,7 +132,9 @@ const ComingSoonSection = () => {
             href="#notify" 
             className="cyber-box inline-block px-8 py-3 font-display hover:scale-105 transition-transform duration-300"
           >
-            GET NOTIFIED
+            <span className="bg-gradient-to-r from-neon-pink to-neon-cyan bg-clip-text text-transparent animate-text-shimmer">
+              GET NOTIFIED
+            </span>
           </a>
         </div>
       </div>
