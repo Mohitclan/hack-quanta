@@ -24,34 +24,46 @@ const HeroSection = () => {
     <section id="home" className="min-h-screen relative flex flex-col items-center justify-center pt-16 overflow-hidden">
       <div ref={gridRef} className="grid-background animate-grid-fade"></div>
       
-      <div className="container mx-auto px-4 z-10 flex flex-col items-center">
-        <div className="mb-8 animate-float">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display tracking-wider text-center">
-            <span className="neon-text block">HACK</span>
-            <span className="neon-text-cyan block mt-2">FEST</span>
-            <span className="text-xl md:text-2xl lg:text-3xl block mt-4 chrome-text">2025</span>
-          </h1>
-        </div>
-
-        <p className="max-w-2xl text-center mb-8 text-gray-300 text-lg">
-          Join the ultimate coding experience where innovation meets technology.
-          Push your limits and build the future.
-        </p>
-
-        <div className="mb-10">
-          <div className="text-center mb-4">
-            <p className="text-lg font-display text-neon-cyan">SEPT 5-6, 2025</p>
+      <div className="container mx-auto px-4 z-10 flex flex-col lg:flex-row items-center gap-8">
+        <div className="lg:w-1/2 flex flex-col items-center lg:items-start">
+          <div className="mb-8 animate-float">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display tracking-wider text-center lg:text-left">
+              <span className="neon-text block">HACK</span>
+              <span className="neon-text-cyan block mt-2">QUANTA</span>
+              <span className="text-xl md:text-2xl lg:text-3xl block mt-4 chrome-text">DATA. DYSTOPIA. DOMINANCE</span>
+            </h1>
           </div>
-          <CountdownTimer targetDate="2025-09-05T09:00:00" />
-        </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 mt-6">
-          <a href="#register" className="cyber-box px-6 py-3 text-center font-display">
-            REGISTER NOW
-          </a>
-          <a href="#about" className="px-6 py-3 border border-neon-cyan/30 text-center hover:border-neon-cyan transition-colors duration-300 font-display">
-            LEARN MORE
-          </a>
+          <p className="max-w-2xl text-center lg:text-left mb-8 text-gray-300 text-lg">
+            Join the ultimate coding experience where innovation meets technology.
+            Push your limits and build the future.
+          </p>
+
+          <div className="mb-10">
+            <div className="text-center lg:text-left mb-4">
+              <p className="text-lg font-display text-neon-cyan">SEPT 5-6, 2025</p>
+            </div>
+            <CountdownTimer targetDate="2025-09-05T09:00:00" />
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-6">
+            <a href="#register" className="cyber-box px-6 py-3 text-center font-display">
+              REGISTER NOW
+            </a>
+            <a href="#about" className="px-6 py-3 border border-neon-cyan/30 text-center hover:border-neon-cyan transition-colors duration-300 font-display">
+              LEARN MORE
+            </a>
+          </div>
+        </div>
+        
+        <div className="lg:w-1/2 cyber-box p-1 reveal">
+          <div className="bg-cyber-darkPurple p-2">
+            <img 
+              src="/lovable-uploads/f8bdac24-4f24-4a85-9c30-6b758c2c8a47.png" 
+              alt="HackQuanta 2025 Poster" 
+              className="w-full rounded shadow-lg hover:shadow-neon-pink/30 transition-shadow duration-300"
+            />
+          </div>
         </div>
       </div>
       

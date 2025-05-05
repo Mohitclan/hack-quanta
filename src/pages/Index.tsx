@@ -21,6 +21,7 @@ const Index = () => {
 
     const observer = new IntersectionObserver(revealCallback, {
       threshold: 0.1,
+      rootMargin: "0px 0px -100px 0px" // Ensures elements start animating a bit before they come into view
     });
 
     revealElements.forEach(el => observer.observe(el));
