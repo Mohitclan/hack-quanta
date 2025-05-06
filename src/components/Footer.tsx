@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="neon-text-cyan font-display text-lg mb-4">QUICK LINKS</h4>
+            <h4 className="neon-text-cyan font-display text-lg mb-4"> </h4>
             <ul className="space-y-2">
               <li>
                 <a href="#home" className="text-gray-300 hover:text-neon-cyan transition-colors inline-flex items-center group">
@@ -69,15 +69,15 @@ const Footer = () => {
             <address className="not-italic text-gray-300">
               <p className="mb-2 flex items-start">
                 <span className="mr-2 text-neon-pink">◉</span>
-                Engineering College Campus
+               jims Engineering & managment technical  Campus noida
               </p>
               <p className="mb-2 flex items-start">
-                <span className="mr-2 text-neon-cyan">◉</span>
-                123 Innovation Avenue
+                <span className="mr-2 text-neon-cyan"></span>
+                
               </p>
               <p className="mb-2 flex items-start">
-                <span className="mr-2 text-neon-pink">◉</span>
-                Techville, TX 75001
+                <span className="mr-2 text-neon-pink"></span>
+                
               </p>
               <p className="mb-2 flex items-start">
                 <span className="mr-2 text-neon-cyan">◉</span>
@@ -89,7 +89,7 @@ const Footer = () => {
                 <span className="mr-2 text-neon-pink">◉</span>
                 <a href="https://geek-room-jimsemtc.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-neon-pink flex items-center">
                   <Link size={14} className="mr-1" /> 
-                  www.yourdomain.com
+                  geek room website
                 </a>
               </p>
             </address>
