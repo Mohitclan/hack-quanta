@@ -28,7 +28,7 @@ const NavBar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <a href="#home" className="text-white font-display text-xl">
           <span className="neon-text">HACK</span>
-          <span className="neon-text-cyan ml-1">FEST</span>
+          <span className="neon-text-cyan ml-1">QUANTA</span>
         </a>
         
         <div className="hidden md:flex space-x-8">
