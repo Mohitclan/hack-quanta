@@ -64,7 +64,7 @@ const ComingSoonSection = () => {
     <section 
       id="comingsoon" 
       ref={sectionRef} 
-      className="min-h-[60vh] relative flex flex-col items-center justify-center py-20 overflow-hidden"
+      className="min-h-[50vh] relative flex flex-col items-center justify-center py-12 overflow-hidden"
     >
       {/* Animated grid background */}
       <div className="grid-background animate-grid-fade"></div>
@@ -97,7 +97,7 @@ const ComingSoonSection = () => {
           <span className="neon-text-cyan ml-4">SOON</span>
         </h2>
         
-        <div className="mt-10">
+        <div className="mt-6">
           <p className="text-gray-300 mb-6">Want to be the first to know when we announce more details?</p>
           <a 
             href="#notify" 
