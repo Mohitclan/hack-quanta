@@ -88,8 +88,8 @@ Strong placement record with top recruiters, ensuring a bright future for studen
                     <div className="w-16 h-16 rounded-full mx-auto mb-2 cyber-box p-1">
                       <div className="w-full h-full rounded-full bg-cyber-purple"></div>
                     </div>
-                    <p className="font-display text-neon-pink">SARAH LEE</p>
-                    <p className="text-xs text-gray-400">TECH LEAD</p>
+                    <p className="font-display text-neon-pink"></p>
+                    <p className="text-xs text-gray-400"></p>
                   </div>
                 </div>
               </div>
