@@ -97,30 +97,7 @@ const ComingSoonSection = () => {
           <span className="neon-text-cyan ml-4">SOON</span>
         </h2>
         
-        <div className="cyber-box max-w-lg mx-auto transform hover:scale-[1.02] transition-transform duration-300">
-          <div className="bg-cyber-darkPurple p-6">
-            <h3 className="font-display text-2xl mb-4 text-white">EVENT DETAILS</h3>
-            <ul className="space-y-4 text-left">
-              <li className="flex items-start">
-                <div className="mr-4 text-neon-pink"></div>
-                <div>
-                  <p className="font-display text-neon-pink"></p>
-                  <p className="text-gray-300">COMING SOON</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <div className="mr-4 text-neon-cyan"></div>
-                <div>
-                  <p className="font-display text-neon-cyan"></p>
-                  <p className="text-gray-300"></p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <div className="mr-4 text-neon-pink"></div>
-                <div>
-                  <p className="font-display text-neon-pink"></p>
-                  <p className="text-gray-300"></p>
-                </div>
+        
               </li>
             </ul>
           </div>
