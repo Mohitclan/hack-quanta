@@ -27,14 +27,14 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
         <div className="lg:w-1/2 flex flex-col items-center lg:items-start">
           <div className="mb-8 animate-float">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display tracking-wider text-center lg:text-left">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-display tracking-wider text-center lg:text-left">
               <span className="neon-text block">HACK</span>
               <span className="neon-text-cyan block mt-2">QUANTA</span>
-              <span className="text-xl md:text-2xl lg:text-3xl block mt-4 chrome-text">DATA. DYSTOPIA. DOMINANCE</span>
+              <span className="text-lg md:text-xl lg:text-3xl block mt-4 chrome-text">DATA. DYSTOPIA. DOMINANCE</span>
             </h1>
           </div>
 
-          <p className="max-w-2xl text-center lg:text-left mb-8 text-gray-300 text-lg">
+          <p className="max-w-2xl text-center lg:text-left mb-8 text-gray-300 text-base lg:text-lg">
             Join the ultimate coding experience where innovation meets technology.
             Push your limits and build the future.
           </p>
@@ -47,7 +47,12 @@ const HeroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            <a href="#register" className="cyber-box px-6 py-3 text-center font-display hover:scale-105 transition-transform duration-300">
+            <a 
+              href="https://devfolio.co" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cyber-box px-6 py-3 text-center font-display hover:scale-105 transition-transform duration-300"
+            >
               REGISTER NOW
             </a>
             <a href="#about" className="px-6 py-3 border border-neon-cyan/30 text-center hover:border-neon-cyan hover:scale-105 transition-all duration-300 font-display">

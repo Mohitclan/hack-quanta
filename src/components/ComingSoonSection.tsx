@@ -91,10 +91,10 @@ const ComingSoonSection = () => {
       >
         <h2 
           ref={glitchRef}
-          className="text-5xl md:text-7xl lg:text-8xl font-display tracking-widest mb-8"
+          className="text-4xl md:text-5xl lg:text-8xl font-display tracking-widest mb-8"
         >
           <span className="neon-text">COMING</span>
-          <span className="neon-text-cyan ml-4">SOON</span>
+          <span className="neon-text-cyan ml-2 md:ml-4">SOON</span>
         </h2>
         
         <div className="mt-6">
