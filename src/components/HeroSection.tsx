@@ -23,7 +23,9 @@ const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen relative flex flex-col items-center justify-center pt-16 overflow-hidden">
       <div ref={gridRef} className="grid-background animate-grid-fade"></div>
-      
+      <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover z-0">
+                        <source src="/lovable-uploads/hero-background.mp4" type="video/mp4" />
+                      </video>
       <div className="container mx-auto px-4 z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
         <div className="lg:w-1/2 flex flex-col items-center lg:items-start">
           <div className="mb-8 animate-float">
