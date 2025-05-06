@@ -103,7 +103,7 @@ Strong placement record with top recruiters, ensuring a bright future for studen
             <p className="text-xl text-white italic">
               "Innovation is the ability to see change as an opportunity - not a threat."
             </p>
-            <footer className="mt-2 text-neon-cyan">— Steve Jobs</footer>
+            <footer className="mt-2 text-neon-cyan">— </footer>
           </blockquote>
         </div>
       </div>
