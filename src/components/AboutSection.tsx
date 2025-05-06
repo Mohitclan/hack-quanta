@@ -41,9 +41,9 @@ const AboutSection = () => {
           <h2 className="text-3xl md:text-4xl font-display mb-4 neon-text inline-block">ABOUT THE HACKATHON</h2>
           <div className="horizontal-line w-32 mx-auto my-4"></div>
           <p className="max-w-3xl mx-auto text-gray-300">
-            HACKFEST is a 24-hour coding marathon where participants collaborate 
-            to solve real-world problems and build innovative solutions. Join us for 
-            an unforgettable experience of creativity, technology, and teamwork.
+           HACKQUANTA is a 36-hour overnight hackathon where participants collaborate to solve real-world problems and build innovative solutions.
+            Join us for an unforgettable experience of
+            creativity, technology, and teamwork.
           </p>
         </div>
 
