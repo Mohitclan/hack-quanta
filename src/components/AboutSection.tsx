@@ -69,11 +69,12 @@ Strong placement record with top recruiters, ensuring a bright future for studen
                 </ul>
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-display mb-4 neon-text">ORGANIZING TEAM</h3>
+                <h3 className="text-xl font-display mb-4 neon-text">GEEK ROOM</h3>
                 <p className="mb-4 text-gray-300">
-                  HACKFEST is proudly organized by "Geek Room," the premier 
-                  tech club at our college. Our team is passionate about technology,
-                  innovation, and creating opportunities for students to showcase their skills.
+                 GeekRoom-JIMSEMTC is a college chapter of GeekRoom,
+                  a thriving tech community with over 25,000 coders nationwide.
+                  We aim to foster a strong tech culture by organizing workshops, hackathons, and collaborative projects that inspire learning and innovation.
+                  As part of GeekRoom, we provide students with resources, mentorship, and opportunities to excel in technology.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mt-6">
                   <div className="text-center">
