@@ -98,7 +98,7 @@ const ComingSoonSection = () => {
         </h2>
         
         <div className="mt-6">
-          <p className="text-gray-300 mb-6">Want to be the first to know when we announce more details?</p>
+          <p className="text-gray-300 mb-6"></p>
           <a 
             href="https://devfolio.co" 
             target="_blank"
