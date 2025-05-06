@@ -38,7 +38,9 @@ const NavBar = () => {
         </div>
         
         <a 
-          href="#register" 
+          href="https://devfolio.co" 
+          target="_blank"
+          rel="noopener noreferrer"
           className="cyber-box px-4 py-2 font-display text-sm md:text-base"
         >
           Register
