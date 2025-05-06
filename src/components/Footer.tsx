@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Instagram, Linkedin, Link } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -14,27 +14,9 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-10 h-10 rounded-full bg-cyber-purple flex items-center justify-center transform hover:scale-110 transition-all hover:bg-neon-pink/20 hover:shadow-glow-sm"
-                aria-label="Facebook"
-              >
-                <Facebook className="text-white hover:text-neon-pink transition-colors" size={20} />
-              </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-cyber-purple flex items-center justify-center transform hover:scale-110 transition-all hover:bg-neon-cyan/20 hover:shadow-glow-sm"
-                aria-label="Twitter"
-              >
-                <Twitter className="text-white hover:text-neon-cyan transition-colors" size={20} />
-              </a>
-              <a 
                 href="https://instagram.com" 
                 target="_blank" 
-                rel="noopener noreferrer"
+                rel="noopener noreferrer" 
                 className="w-10 h-10 rounded-full bg-cyber-purple flex items-center justify-center transform hover:scale-110 transition-all hover:bg-neon-pink/20 hover:shadow-glow-sm"
                 aria-label="Instagram"
               >
@@ -101,6 +83,13 @@ const Footer = () => {
                 <span className="mr-2 text-neon-cyan">◉</span>
                 <a href="mailto:info@hackquanta.com" className="hover:text-neon-cyan transition-colors">
                   info@hackquanta.com
+                </a>
+              </p>
+              <p className="mb-2 flex items-start">
+                <span className="mr-2 text-neon-pink">◉</span>
+                <a href="https://www.yourdomain.com" target="_blank" rel="noopener noreferrer" className="hover:text-neon-pink flex items-center">
+                  <Link size={14} className="mr-1" /> 
+                  www.yourdomain.com
                 </a>
               </p>
             </address>
