@@ -105,21 +105,21 @@ const ComingSoonSection = () => {
                 <div className="mr-4 text-neon-pink">◉</div>
                 <div>
                   <p className="font-display text-neon-pink">Prizes</p>
-                  <p className="text-gray-300">Over $10,000 in cash and sponsor prizes</p>
+                  <p className="text-gray-300">COMING SOON</p>
                 </div>
               </li>
               <li className="flex items-start">
                 <div className="mr-4 text-neon-cyan">◉</div>
                 <div>
                   <p className="font-display text-neon-cyan">Schedule</p>
-                  <p className="text-gray-300">Detailed event timeline coming soon</p>
+                  <p className="text-gray-300"></p>
                 </div>
               </li>
               <li className="flex items-start">
                 <div className="mr-4 text-neon-pink">◉</div>
                 <div>
-                  <p className="font-display text-neon-pink">Speakers</p>
-                  <p className="text-gray-300">Industry experts and tech leaders</p>
+                  <p className="font-display text-neon-pink"></p>
+                  <p className="text-gray-300"></p>
                 </div>
               </li>
             </ul>
