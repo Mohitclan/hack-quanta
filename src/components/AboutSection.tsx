@@ -76,14 +76,7 @@ Strong placement record with top recruiters, ensuring a bright future for studen
                   We aim to foster a strong tech culture by organizing workshops, hackathons, and collaborative projects that inspire learning and innovation.
                   As part of GeekRoom, we provide students with resources, mentorship, and opportunities to excel in technology.
                 </p>
-                <div className="grid grid-cols-2 gap-4 mt-6">
-                  <div className="text-center">
-                    <div className="w-16 h-16 rounded-full mx-auto mb-2 cyber-box p-1">
-                      <div className="w-full h-full rounded-full bg-cyber-purple"></div>
-                    </div>
-                    <p className="font-display text-neon-cyan"></p>
-                    <p className="text-xs text-gray-400"></p>
-                  </div>
+                
                   <div className="text-center">
                     <div className="w-16 h-16 rounded-full mx-auto mb-2 cyber-box p-1">
                       <div className="w-full h-full rounded-full bg-cyber-purple"></div>
