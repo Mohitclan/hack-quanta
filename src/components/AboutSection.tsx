@@ -53,15 +53,18 @@ const AboutSection = () => {
               <div className="flex-1">
                 <h3 className="text-xl font-display mb-4 neon-text-cyan">COLLEGE DETAILS</h3>
                 <p className="mb-4 text-gray-300">
-                  Hosted by the prestigious Engineering College, a hub for innovation
-                  and technology education since 2005. Our institution has been at the 
-                  forefront of nurturing technical talent and fostering an ecosystem of 
-                  creativity and problem-solving.
+                  JIMS Engineering Management Technical Campus
+JEMTEC is a premier BTech institution focused on nurturing excellence in education, innovation, and research. Located in Greater Noida, JEMTEC offers a dynamic learning environment to shape future-ready engineers and technocrats.
+
+
                 </p>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
-                  <li>State-of-the-art facilities</li>
-                  <li>Industry partnerships with leading tech companies</li>
-                  <li>Award-winning faculty members</li>
+                  <li>Cutting-Edge Infrastructure
+State-of-the-art laboratories, modern classrooms, and a sprawling campus to provide an exceptional learning experience for aspiring engineers.</li>
+                  <li>Industry-Driven Curriculum
+A curriculum designed to bridge the gap between industry and academia, ensuring students are equipped with the latest technological skills.</li>
+                  <li>Placement Excellence
+Strong placement record with top recruiters, ensuring a bright future for students through high-paying and rewarding job opportunities.</li>
                   <li>Rich history of successful hackathon participants</li>
                 </ul>
               </div>
