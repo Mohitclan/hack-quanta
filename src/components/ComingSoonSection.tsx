@@ -97,12 +97,6 @@ const ComingSoonSection = () => {
           <span className="neon-text-cyan ml-4">SOON</span>
         </h2>
         
-        
-              </li>
-            </ul>
-          </div>
-        </div>
-        
         <div className="mt-10">
           <p className="text-gray-300 mb-6">Want to be the first to know when we announce more details?</p>
           <a 
