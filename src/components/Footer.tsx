@@ -52,7 +52,7 @@ const Footer = () => {
               <li>
                 <a href="#comingsoon" className="text-gray-300 hover:text-neon-cyan transition-colors inline-flex items-center group">
                   <span className="w-0 group-hover:w-3 transition-all duration-300 mr-0 group-hover:mr-2 h-px bg-neon-cyan"></span>
-                  Events
+                  
                 </a>
               </li>
               <li>
