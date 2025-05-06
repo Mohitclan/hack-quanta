@@ -23,7 +23,7 @@ const Footer = () => {
                 <Instagram className="text-white hover:text-neon-pink transition-colors" size={20} />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/hack-quanta-48a681363/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-cyber-purple flex items-center justify-center transform hover:scale-110 transition-all hover:bg-neon-cyan/20 hover:shadow-glow-sm"
@@ -87,7 +87,7 @@ const Footer = () => {
               </p>
               <p className="mb-2 flex items-start">
                 <span className="mr-2 text-neon-pink">◉</span>
-                <a href="https://www.yourdomain.com" target="_blank" rel="noopener noreferrer" className="hover:text-neon-pink flex items-center">
+                <a href="https://geek-room-jimsemtc.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-neon-pink flex items-center">
                   <Link size={14} className="mr-1" /> 
                   www.yourdomain.com
                 </a>
