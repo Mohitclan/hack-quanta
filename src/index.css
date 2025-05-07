@@ -167,6 +167,7 @@
   transform: translateY(50px);
   opacity: 0;
   transition: all 1s ease;
+  width: 100%;
 }
 
 .reveal.active {
@@ -239,4 +240,20 @@
 
 .shadow-glow-cyan-sm {
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: 640px) {
+  .neon-text, .neon-text-cyan {
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.8),
+                 0 0 5px rgba(255, 0, 204, 0.8);
+  }
+  
+  .cyber-box {
+    box-shadow: 0 0 8px rgba(255, 0, 204, 0.3);
+  }
+  
+  .grid-background {
+    background-size: 30px 30px;
+  }
 }

@@ -1,11 +1,16 @@
 
 import React, { useEffect, useRef } from 'react';
 import CountdownTimer from './CountdownTimer';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroSection = () => {
   const gridRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
+    // Only enable the mousemove effect on non-mobile devices
+    if (isMobile) return;
+    
     const handleMouseMove = (e: MouseEvent) => {
       if (!gridRef.current) return;
       
@@ -18,50 +23,50 @@ const HeroSection = () => {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [isMobile]);
 
   return (
-    <section id="home" className="min-h-screen relative flex flex-col items-center justify-center pt-16 overflow-hidden">
+    <section id="home" className="min-h-screen relative flex flex-col items-center justify-center pt-16 pb-8 overflow-hidden px-4">
       <div ref={gridRef} className="grid-background animate-grid-fade"></div>
       
-      <div className="container mx-auto px-4 z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
-        <div className="lg:w-1/2 flex flex-col items-center lg:items-start">
-          <div className="mb-8 animate-float">
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-display tracking-wider text-center lg:text-left">
+      <div className="container mx-auto z-10 flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-12">
+        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start">
+          <div className="mb-6 md:mb-8 animate-float">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-display tracking-wider text-center lg:text-left">
               <span className="neon-text block">HACK</span>
               <span className="neon-text-cyan block mt-2">QUANTA</span>
-              <span className="text-lg md:text-xl lg:text-3xl block mt-4 chrome-text">DATA. DYSTOPIA. DOMINANCE</span>
+              <span className="text-sm sm:text-lg md:text-xl lg:text-3xl block mt-4 chrome-text">DATA. DYSTOPIA. DOMINANCE</span>
             </h1>
           </div>
 
-          <p className="max-w-2xl text-center lg:text-left mb-8 text-gray-300 text-base lg:text-lg">
+          <p className="max-w-2xl text-center lg:text-left mb-6 md:mb-8 text-gray-300 text-sm md:text-base px-2 sm:px-0">
             Join the ultimate coding experience where innovation meets technology.
             Push your limits and build the future.
           </p>
 
-          <div className="mb-10">
+          <div className="mb-6 md:mb-10 w-full">
             <div className="text-center lg:text-left mb-4">
-              <p className="text-lg font-display text-neon-cyan">SEPT 5-6, 2025</p>
+              <p className="text-base md:text-lg font-display text-neon-cyan">SEPT 5-6, 2025</p>
             </div>
             <CountdownTimer targetDate="2025-09-05T09:00:00" />
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-6">
+          <div className="flex flex-col sm:flex-row gap-4 mt-4 md:mt-6 w-full sm:w-auto">
             <a 
               href="https://devfolio.co" 
               target="_blank"
               rel="noopener noreferrer"
-              className="cyber-box px-6 py-3 text-center font-display hover:scale-105 transition-transform duration-300"
+              className="cyber-box px-4 sm:px-6 py-3 text-center font-display hover:scale-105 transition-transform duration-300"
             >
               REGISTER NOW
             </a>
-            <a href="#about" className="px-6 py-3 border border-neon-cyan/30 text-center hover:border-neon-cyan hover:scale-105 transition-all duration-300 font-display">
+            <a href="#about" className="px-4 sm:px-6 py-3 border border-neon-cyan/30 text-center hover:border-neon-cyan hover:scale-105 transition-all duration-300 font-display">
               LEARN MORE
             </a>
           </div>
         </div>
         
-        <div className="lg:w-2/5 cyber-box p-1 reveal">
+        <div className={`${isMobile ? 'w-full' : 'lg:w-2/5'} cyber-box p-1 reveal mt-8 lg:mt-0`}>
           <div className="bg-cyber-darkPurple p-2">
             <img 
               src="/lovable-uploads/f8bdac24-4f24-4a85-9c30-6b758c2c8a47.png" 
@@ -72,7 +77,7 @@ const HeroSection = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-pulse">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-pulse hidden sm:block">
         <p className="text-neon-pink text-sm">SCROLL DOWN</p>
         <div className="mt-2 w-6 h-6 mx-auto border-b-2 border-r-2 border-neon-pink transform rotate-45"></div>
       </div>

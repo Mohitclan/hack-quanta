@@ -1,11 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface CountdownTimerProps {
   targetDate: string;
 }
 
 const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
+  const isMobile = useIsMobile();
+  
   const calculateTimeLeft = () => {
     const difference = new Date(targetDate).getTime() - new Date().getTime();
     let timeLeft = {
@@ -38,10 +41,10 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   });
 
   const renderTimeBlock = (value: number, label: string, glowClass: string) => (
-    <div className="flex flex-col items-center p-4">
+    <div className="flex flex-col items-center p-2 sm:p-4">
       <div className="cyber-box mb-2 w-full p-1">
-        <div className="bg-cyber-darkPurple p-3 md:p-6 w-full">
-          <span className={`text-2xl md:text-4xl font-display ${glowClass}`}>
+        <div className="bg-cyber-darkPurple p-2 sm:p-3 md:p-6 w-full">
+          <span className={`text-xl sm:text-2xl md:text-4xl font-display ${glowClass}`}>
             {value.toString().padStart(2, '0')}
           </span>
         </div>
@@ -51,7 +54,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   );
 
   return (
-    <div className="flex justify-center gap-2 md:gap-4">
+    <div className="flex justify-center gap-1 sm:gap-2 md:gap-4 w-full">
       {renderTimeBlock(timeLeft.days, 'Days', 'animate-pulse-glow')}
       {renderTimeBlock(timeLeft.hours, 'Hours', 'animate-pulse-glow-cyan')}
       {renderTimeBlock(timeLeft.minutes, 'Minutes', 'animate-pulse-glow')}
