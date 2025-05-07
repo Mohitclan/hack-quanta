@@ -69,16 +69,12 @@ Strong placement record with top recruiters, ensuring a bright future for studen
                 </ul>
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-display mb-4 neon-text">GEEK ROOM</h3>
+                <h3 className="text-xl font-display mb-4 neon-text">HACKATHON TEAM</h3>
                 <p className="mb-4 text-gray-300">
-                 Geek Room-JIMSEMTC is a college chapter of GeekRoom,
-                  a thriving tech community with over 25,000 coders nationwide.
-                  We aim to foster a strong tech culture by organizing workshops, hackathons, and collaborative projects that inspire learning and innovation.
+                  Geek Room-JIMSEMTC is a college chapter of GeekRoom, a thriving tech community with over 25,000 coders nationwide. 
+                  We aim to foster a strong tech culture by organizing workshops, hackathons, and collaborative projects that inspire learning and innovation. 
                   As part of GeekRoom, we provide students with resources, mentorship, and opportunities to excel in technology.
                 </p>
-                
-                  
-                </div>
               </div>
             </div>
           </div>

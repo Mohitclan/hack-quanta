@@ -68,8 +68,8 @@ const Footer = () => {
             <h4 className="neon-text font-display text-lg mb-4">CONTACT US</h4>
             <address className="not-italic text-gray-300">
               <p className="mb-2 flex items-start">
-                <span className="mr-2 text-neon-pink">◉</span
-              JIMS Engineering & managment technical  Campus noida
+                <span className="mr-2 text-neon-pink">◉</span>
+                JIMS Engineering Management Technical Campus, Noida
               </p>
               <p className="mb-2 flex items-start">
                 <span className="mr-2 text-neon-cyan"></span>
@@ -89,7 +89,7 @@ const Footer = () => {
                 <span className="mr-2 text-neon-pink">◉</span>
                 <a href="https://geek-room-jimsemtc.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-neon-pink flex items-center">
                   <Link size={14} className="mr-1" /> 
-                  Geek Room website
+                  GEEK ROOM
                 </a>
               </p>
             </address>
