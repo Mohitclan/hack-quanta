@@ -46,7 +46,7 @@ const HeroSection = () => {
 
           <div className="mb-10 md:mb-12 w-full max-w-2xl">
             <div className="text-center mb-4">
-              <p className="text-base md:text-lg font-display text-neon-cyan">SEPT 5-6, 2025</p>
+              <p className="text-base md:text-lg font-display text-neon-cyan">SEPT 5th-6th, 2025</p>
             </div>
             <CountdownTimer targetDate="2025-09-05T09:00:00" />
           </div>
