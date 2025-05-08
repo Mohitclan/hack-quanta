@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Instagram, Linkedin, Link, MapPin } from 'lucide-react';
+import { Instagram, Linkedin, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -49,18 +49,6 @@ const Footer = () => {
                   About
                 </a>
               </li>
-              <li>
-                <a href="#comingsoon" className="text-gray-300 hover:text-neon-cyan transition-colors inline-flex items-center group">
-                  <span className="w-0 group-hover:w-3 transition-all duration-300 mr-0 group-hover:mr-2 h-px bg-neon-cyan"></span>
-                  
-                </a>
-              </li>
-              <li>
-                <a href="#register" className="text-gray-300 hover:text-neon-cyan transition-colors inline-flex items-center group">
-                  <span className="w-0 group-hover:w-3 transition-all duration-300 mr-0 group-hover:mr-2 h-px bg-neon-cyan"></span>
-                  Register
-                </a>
-              </li>
             </ul>
           </div>
           
@@ -76,16 +64,8 @@ const Footer = () => {
                   className="hover:text-neon-pink transition-colors flex items-center"
                 >
                   <MapPin size={14} className="mr-1 inline" />
-                  JIMS Engineering Management Technical Campus, Noida
+                  JIMS Engineering Management Technical Campus, Greater Noida
                 </a>
-              </p>
-              <p className="mb-2 flex items-start">
-                <span className="mr-2 text-neon-cyan"></span>
-                
-              </p>
-              <p className="mb-2 flex items-start">
-                <span className="mr-2 text-neon-pink"></span>
-                
               </p>
               <p className="mb-2 flex items-start">
                 <span className="mr-2 text-neon-cyan">◉</span>
@@ -95,9 +75,9 @@ const Footer = () => {
               </p>
               <p className="mb-2 flex items-start">
                 <span className="mr-2 text-neon-pink">◉</span>
-                <a href="https://geek-room-jimsemtc.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-neon-pink flex items-center">
-                  <Link size={14} className="mr-1" /> 
-                  GEEK ROOM
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-neon-pink flex items-center">
+                  <Instagram size={14} className="mr-1" /> 
+                  Follow us
                 </a>
               </p>
             </address>
