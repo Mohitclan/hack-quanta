@@ -67,7 +67,7 @@ const AboutSection = () => {
                 </ul>
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-display mb-4 neon-text">HACKATHON TEAM</h3>
+                <h3 className="text-xl font-display mb-4 neon-text">GEEK ROOM</h3>
                 <p className="mb-4 text-gray-300 text-sm md:text-base">
                   Geek Room-JIMSEMTC is a college chapter of Geek Room, a thriving tech community with over 25,000 coders nationwide. 
                   We aim to foster a strong tech culture by organizing workshops, hackathons, and collaborative projects that inspire learning and innovation. 
