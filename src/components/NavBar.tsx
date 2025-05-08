@@ -30,12 +30,12 @@ const NavBar = () => {
     <header className="fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-3">
-          {/* Logo in top left */}
+          {/* Logo in top left - Logo 1 - Slightly increased size */}
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/ae3ecdc4-9c59-4591-9239-f257b341427b.png" 
-              alt="JEMTEC Logo" 
-              className="h-16 w-16 object-contain"
+              src="/lovable-uploads/f115c920-38e7-43ee-8309-398c948731e4.png" 
+              alt="Geek Room Logo" 
+              className="h-20 w-20 object-contain" 
             />
           </div>
           
@@ -93,12 +93,12 @@ const NavBar = () => {
             )}
           </nav>
           
-          {/* Logo in top right */}
+          {/* Logo in top right - Logo 2 - Slightly increased size */}
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/b6f4ea3c-9561-41ec-a684-b80fe4df7e88.png" 
-              alt="Geek Room Logo" 
-              className="h-16 w-16 object-contain"
+              src="/lovable-uploads/322409a5-cdad-4296-92ff-1984d22a2f72.png" 
+              alt="JIMS EMTC Logo" 
+              className="h-20 w-20 object-contain"
             />
           </div>
         </div>
