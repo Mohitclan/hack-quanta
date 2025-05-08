@@ -14,7 +14,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/hackquanta?igsh=OGoxdWQ5cXppanU2&utm_source=qr" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-10 h-10 rounded-full bg-cyber-purple flex items-center justify-center transform hover:scale-110 transition-all hover:bg-neon-pink/20 hover:shadow-glow-sm"
@@ -75,7 +75,7 @@ const Footer = () => {
               </p>
               <p className="mb-2 flex items-start">
                 <span className="mr-2 text-neon-pink">◉</span>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-neon-pink flex items-center">
+                <a href="https://www.instagram.com/hackquanta?igsh=OGoxdWQ5cXppanU2&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-neon-pink flex items-center">
                   <Instagram size={14} className="mr-1" /> 
                   Follow us
                 </a>
