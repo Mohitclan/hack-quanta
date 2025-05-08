@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Home, Info, ListOrdered } from 'lucide-react';
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,21 +29,16 @@ const NavBar = () => {
   return (
     <nav 
       className={cn(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-300",
-        isScrolled ? "bg-cyber-black/80 backdrop-blur-md py-2" : "py-4"
+        "fixed top-0 right-0 z-50 transition-all duration-300",
+        isScrolled ? "bg-cyber-black/80 backdrop-blur-md" : ""
       )}
     >
-      <div className="container mx-auto flex justify-between items-center px-4">
-        <a href="#home" className="text-white font-display text-lg md:text-xl">
-          <span className="neon-text">HACK</span>
-          <span className="neon-text-cyan ml-1">QUANTA</span>
-        </a>
-        
+      <div className="flex flex-col items-end">
         {/* Mobile Menu Button */}
         {isMobile && (
           <button 
             onClick={toggleMenu}
-            className="md:hidden cyber-box p-1"
+            className="md:hidden cyber-box p-1 m-4"
           >
             <div className="w-6 h-5 flex flex-col justify-between">
               <span className={`w-full h-0.5 bg-white transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
@@ -52,36 +48,36 @@ const NavBar = () => {
           </button>
         )}
         
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
-          <a href="#home" className="text-white hover:text-neon-pink transition-colors">Home</a>
-          <a href="#about" className="text-white hover:text-neon-pink transition-colors">About</a>
-          <a href="#comingsoon" className="text-white hover:text-neon-cyan transition-colors">Events</a>
+        {/* Desktop Navigation - Vertical on right side */}
+        <div className={`hidden md:flex flex-col space-y-6 p-4 bg-cyber-black/80 backdrop-blur-md`}>
+          <a href="#home" className="text-white hover:text-neon-pink transition-colors flex items-center gap-2">
+            <Home size={18} />
+            <span>Home</span>
+          </a>
+          <a href="#about" className="text-white hover:text-neon-pink transition-colors flex items-center gap-2">
+            <Info size={18} />
+            <span>About</span>
+          </a>
+          <a href="#comingsoon" className="text-white hover:text-neon-cyan transition-colors flex items-center gap-2">
+            <ListOrdered size={18} />
+            <span>Tracks</span>
+          </a>
         </div>
         
-        {/* Desktop Register Button */}
-        <a 
-          href="https://devfolio.co" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:block cyber-box px-4 py-2 font-display text-sm md:text-base"
-        >
-          Register
-        </a>
-
         {/* Mobile Menu */}
         {isMobile && isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-cyber-black/95 backdrop-blur-lg shadow-lg py-4 flex flex-col items-center space-y-4 md:hidden">
-            <a href="#home" className="text-white hover:text-neon-pink transition-colors py-2">Home</a>
-            <a href="#about" className="text-white hover:text-neon-pink transition-colors py-2">About</a>
-            <a href="#comingsoon" className="text-white hover:text-neon-cyan transition-colors py-2">Events</a>
-            <a 
-              href="https://devfolio.co" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cyber-box px-4 py-2 font-display text-sm"
-            >
-              Register
+          <div className="absolute top-full right-0 w-48 bg-cyber-black/95 backdrop-blur-lg shadow-lg py-4 flex flex-col items-start space-y-4 px-4">
+            <a href="#home" className="text-white hover:text-neon-pink transition-colors py-2 flex items-center gap-2">
+              <Home size={18} />
+              <span>Home</span>
+            </a>
+            <a href="#about" className="text-white hover:text-neon-pink transition-colors py-2 flex items-center gap-2">
+              <Info size={18} />
+              <span>About</span>
+            </a>
+            <a href="#comingsoon" className="text-white hover:text-neon-cyan transition-colors py-2 flex items-center gap-2">
+              <ListOrdered size={18} />
+              <span>Tracks</span>
             </a>
           </div>
         )}
