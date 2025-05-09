@@ -52,12 +52,9 @@ const HeroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-4 md:mt-6 w-full sm:w-auto">
-            <a 
-              href="#comingsoon"
-              className="cyber-box px-4 sm:px-6 py-3 text-center font-display hover:scale-105 transition-transform duration-300"
-            >
-              REGISTER NOW
-            </a>
+            {/* Devfolio Apply Button */}
+            <div className="apply-button" data-hackathon-slug="hack-quanta" data-button-theme="dark-inverted" style={{height: "44px", width: "312px"}}></div>
+            
             <a href="#about" className="px-4 sm:px-6 py-3 border border-neon-cyan/30 text-center hover:border-neon-cyan hover:scale-105 transition-all duration-300 font-display">
               LEARN MORE
             </a>
