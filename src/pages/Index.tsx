@@ -4,6 +4,7 @@ import NavBar from '@/components/NavBar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import ComingSoonSection from '@/components/ComingSoonSection';
+import SponsorsSection from '@/components/SponsorsSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -53,6 +54,7 @@ const Index = () => {
       <NavBar />
       <HeroSection />
       <AboutSection />
+      <SponsorsSection />
       <ComingSoonSection />
       <Footer />
     </div>
