@@ -105,7 +105,7 @@ const ComingSoonSection = () => {
             className="cyber-box inline-block px-8 py-3 font-display hover:scale-105 transition-transform duration-300"
           >
             <span className="bg-gradient-to-r from-neon-pink to-neon-cyan bg-clip-text text-transparent animate-text-shimmer">
-              GET NOTIFIED
+              Apply with devfolio
             </span>
           </a>
         </div>
