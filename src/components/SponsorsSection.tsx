@@ -2,7 +2,6 @@
 import React from 'react';
 
 const SponsorsSection = () => {
-  // Since the website has a dark theme, we'll use the white Devfolio logo version
   return (
     <section id="sponsors" className="py-16 px-4 relative overflow-hidden">
       <div className="horizontal-line mb-10"></div>
@@ -14,29 +13,23 @@ const SponsorsSection = () => {
           </p>
         </div>
 
-        <div className="space-y-12">
-          {/* Gold Tier Sponsors */}
-          <div className="reveal">
-            <h3 className="text-xl font-display text-neon-pink text-center mb-6">GOLD SPONSORS</h3>
-            <div className="flex flex-wrap justify-center items-center gap-10">
-              {/* Gold tier is now empty */}
-            </div>
-          </div>
-          
+        <div className="space-y-16">
           {/* Silver Tier Sponsors */}
           <div className="reveal">
-            <h3 className="text-xl font-display text-white text-center mb-6">SILVER SPONSORS</h3>
-            <div className="flex flex-wrap justify-center items-center gap-10">
+            <h3 className="text-xl font-display text-white text-center mb-8">
+              <span className="border-b-2 border-neon-cyan pb-2 px-4">SILVER SPONSORS</span>
+            </h3>
+            <div className="flex flex-wrap justify-center items-center gap-10 mt-8">
               <a 
                 href="https://devfolio.co" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-80 p-5"
+                className="transition-all duration-300 hover:opacity-80 p-6 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-cyan-sm"
               >
                 <img 
                   src="/lovable-uploads/0740d959-a9b6-41fa-aea9-a2c5286376ac.png" 
                   alt="DEVFOLIO LOGO" 
-                  className="h-12 md:h-16" 
+                  className="h-14 md:h-20" 
                 />
               </a>
             </div>
@@ -44,30 +37,32 @@ const SponsorsSection = () => {
 
           {/* Bronze Tier Sponsors */}
           <div className="reveal">
-            <h3 className="text-xl font-display text-orange-400 text-center mb-6">BRONZE SPONSORS</h3>
-            <div className="flex flex-wrap justify-center items-center gap-8">
+            <h3 className="text-xl font-display text-orange-400 text-center mb-8">
+              <span className="border-b-2 border-orange-400 pb-2 px-4">BRONZE SPONSORS</span>
+            </h3>
+            <div className="flex flex-wrap justify-center items-center gap-12 mt-8">
               <a 
                 href="https://polygon.technology" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-80 p-4"
+                className="transition-all duration-300 hover:opacity-80 p-5 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-sm"
               >
                 <img 
                   src="/lovable-uploads/4dc66ebf-0022-4ea8-a904-f6a8618468b4.png" 
                   alt="ETHIndia LOGO" 
-                  className="h-8 md:h-12" 
+                  className="h-10 md:h-14" 
                 />
               </a>
               <a 
                 href="https://replit.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-80 p-4"
+                className="transition-all duration-300 hover:opacity-80 p-5 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-sm"
               >
                 <img 
                   src="/lovable-uploads/b08f57e6-9810-4876-8272-8fd68caa8a36.png" 
                   alt="Partner LOGO" 
-                  className="h-8 md:h-12" 
+                  className="h-10 md:h-14" 
                 />
               </a>
             </div>
