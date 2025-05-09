@@ -19,6 +19,14 @@ const SponsorsSection = () => {
           <div className="reveal">
             <h3 className="text-xl font-display text-neon-pink text-center mb-6">GOLD SPONSORS</h3>
             <div className="flex flex-wrap justify-center items-center gap-10">
+              {/* Gold tier is now empty */}
+            </div>
+          </div>
+          
+          {/* Silver Tier Sponsors */}
+          <div className="reveal">
+            <h3 className="text-xl font-display text-white text-center mb-6">SILVER SPONSORS</h3>
+            <div className="flex flex-wrap justify-center items-center gap-10">
               <a 
                 href="https://devfolio.co" 
                 target="_blank" 
@@ -33,39 +41,20 @@ const SponsorsSection = () => {
               </a>
             </div>
           </div>
-          
-          {/* Silver Tier Sponsors */}
-          <div className="reveal">
-            <h3 className="text-xl font-display text-white text-center mb-6">SILVER SPONSORS</h3>
-            <div className="flex flex-wrap justify-center items-center gap-10">
-              <a 
-                href="https://polygon.technology" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-80 p-5"
-              >
-                <img 
-                  src="/lovable-uploads/4dc66ebf-0022-4ea8-a904-f6a8618468b4.png" 
-                  alt="ETHIndia LOGO" 
-                  className="h-10 md:h-14" 
-                />
-              </a>
-            </div>
-          </div>
 
           {/* Bronze Tier Sponsors */}
           <div className="reveal">
             <h3 className="text-xl font-display text-orange-400 text-center mb-6">BRONZE SPONSORS</h3>
             <div className="flex flex-wrap justify-center items-center gap-8">
               <a 
-                href="https://fold.money" 
+                href="https://polygon.technology" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="transition-all duration-300 hover:opacity-80 p-4"
               >
                 <img 
-                  src="/lovable-uploads/19ecbffb-c5e8-49ae-9d42-d64b0cca0872.png" 
-                  alt="Fold LOGO" 
+                  src="/lovable-uploads/4dc66ebf-0022-4ea8-a904-f6a8618468b4.png" 
+                  alt="ETHIndia LOGO" 
                   className="h-8 md:h-12" 
                 />
               </a>
