@@ -53,18 +53,6 @@ const SponsorsSection = () => {
                   className="h-10 md:h-14" 
                 />
               </a>
-              <a 
-                href="https://replit.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-80 p-5 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-sm"
-              >
-                <img 
-                  src="/lovable-uploads/b08f57e6-9810-4876-8272-8fd68caa8a36.png" 
-                  alt="Partner LOGO" 
-                  className="h-10 md:h-14" 
-                />
-              </a>
             </div>
           </div>
         </div>
