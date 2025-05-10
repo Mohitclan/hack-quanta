@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import NavBar from '@/components/NavBar';
 import HeroSection from '@/components/HeroSection';
@@ -42,6 +41,14 @@ const Index = () => {
 
     revealElements.forEach(el => observer.observe(el));
     fadeElements.forEach(el => fadeObserver.observe(el));
+
+    // Initialize Devfolio button after page load
+    setTimeout(() => {
+      if (window.devfolio) {
+        console.log("Initializing Devfolio from Index component");
+        window.devfolio.init();
+      }
+    }, 1000);
 
     return () => {
       revealElements.forEach(el => observer.unobserve(el));

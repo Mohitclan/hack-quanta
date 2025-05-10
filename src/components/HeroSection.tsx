@@ -25,21 +25,40 @@ const HeroSection = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [isMobile]);
 
-  // Improved Devfolio initialization
+  // Devfolio SDK initialization - strictly following documentation
   useEffect(() => {
-    // Check if Devfolio script is loaded
-    const checkDevfolioAndInit = () => {
+    const initDevfolioButton = () => {
       if (window.devfolio) {
+        console.log("Devfolio SDK found, initializing button...");
+        
+        // Clear the button container first
+        const buttonContainer = document.getElementById('devfolio-apply-now');
+        if (buttonContainer) {
+          buttonContainer.innerHTML = '';
+        }
+        
+        // Initialize the Devfolio button
         window.devfolio.init();
-        console.log('Devfolio SDK initialized successfully');
+        
+        // Verify button initialization
+        setTimeout(() => {
+          const button = document.querySelector('.apply-button iframe');
+          if (button) {
+            console.log("Devfolio button successfully rendered");
+          } else {
+            console.log("Devfolio button not found after initialization");
+            // Retry initialization
+            window.devfolio.init();
+          }
+        }, 1000);
       } else {
-        console.log('Waiting for Devfolio SDK to load...');
-        setTimeout(checkDevfolioAndInit, 500);
+        console.log("Waiting for Devfolio SDK to load...");
+        setTimeout(initDevfolioButton, 500);
       }
     };
 
-    // Start checking once the component is mounted
-    checkDevfolioAndInit();
+    // Start initialization process
+    initDevfolioButton();
 
     return () => {
       // Cleanup if needed
@@ -73,16 +92,31 @@ const HeroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-4 md:mt-6 w-full justify-center items-center">
-            {/* Updated Apply Button with inline styles to ensure visibility */}
+            {/* Properly implemented Devfolio button - strictly following docs */}
             <div 
-              id="devfolio-apply-now"
-              className="apply-button cursor-pointer shadow-glow-sm bg-white rounded-md flex items-center justify-center"
-              data-hackathon-slug="hack-quanta" 
-              data-button-theme="dark-inverted"
-              style={{ height: "44px", width: "312px", minHeight: "44px", minWidth: "312px" }}
+              id="devfolio-apply-now" 
+              className="devfolio-button-container"
+              style={{
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                minHeight: '44px',
+                height: '44px',
+                width: '312px',
+                minWidth: '312px'
+              }}
             >
-              {/* Fallback content in case button doesn't load */}
-              <span className="text-center font-bold text-black">Apply with Devfolio</span>
+              <button 
+                className="apply-button" 
+                data-hackathon-slug="hack-quanta" 
+                data-button-theme="dark-inverted"
+                style={{
+                  height: '44px',
+                  width: '312px'
+                }}
+              >
+                <span>Apply with Devfolio</span>
+              </button>
             </div>
             
             <a href="#about" className="px-4 sm:px-6 py-3 border border-neon-cyan/30 text-center hover:border-neon-cyan hover:scale-105 transition-all duration-300 font-display">
