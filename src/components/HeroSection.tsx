@@ -25,6 +25,27 @@ const HeroSection = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [isMobile]);
 
+  // Added for Devfolio button initialization
+  useEffect(() => {
+    const script = document.querySelector('script[src="https://apply.devfolio.co/v2/sdk.js"]');
+    
+    const handleLoad = () => {
+      if (window.devfolio) {
+        window.devfolio.init();
+      }
+    };
+
+    if (script) {
+      script.addEventListener('load', handleLoad);
+    }
+
+    return () => {
+      if (script) {
+        script.removeEventListener('load', handleLoad);
+      }
+    };
+  }, []);
+
   return (
     <section id="home" className="min-h-screen relative flex flex-col items-center justify-center pt-16 pb-8 overflow-hidden px-4">
       <div ref={gridRef} className="grid-background animate-grid-fade"></div>
@@ -52,8 +73,12 @@ const HeroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-4 md:mt-6 w-full sm:w-auto">
-            {/* Devfolio Apply Button */}
-            <div className="apply-button" data-hackathon-slug="hack-quanta" data-button-theme="dark-inverted" style={{height: "44px", width: "312px"}}></div>
+            {/* Devfolio Apply Button - with proper theme and styling */}
+            <div 
+              className="apply-button" 
+              data-hackathon-slug="hack-quanta" 
+              data-button-theme="dark-inverted"
+            ></div>
             
             <a href="#about" className="px-4 sm:px-6 py-3 border border-neon-cyan/30 text-center hover:border-neon-cyan hover:scale-105 transition-all duration-300 font-display">
               LEARN MORE
@@ -69,5 +94,14 @@ const HeroSection = () => {
     </section>
   );
 };
+
+// Add TypeScript interface for the Devfolio SDK
+declare global {
+  interface Window {
+    devfolio?: {
+      init: () => void;
+    }
+  }
+}
 
 export default HeroSection;
