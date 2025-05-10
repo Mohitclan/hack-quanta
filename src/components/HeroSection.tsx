@@ -25,46 +25,6 @@ const HeroSection = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [isMobile]);
 
-  // Devfolio SDK initialization - strictly following documentation
-  useEffect(() => {
-    const initDevfolioButton = () => {
-      if (window.devfolio) {
-        console.log("Devfolio SDK found, initializing button...");
-        
-        // Clear the button container first
-        const buttonContainer = document.getElementById('devfolio-apply-now');
-        if (buttonContainer) {
-          buttonContainer.innerHTML = '';
-        }
-        
-        // Initialize the Devfolio button
-        window.devfolio.init();
-        
-        // Verify button initialization
-        setTimeout(() => {
-          const button = document.querySelector('.apply-button iframe');
-          if (button) {
-            console.log("Devfolio button successfully rendered");
-          } else {
-            console.log("Devfolio button not found after initialization");
-            // Retry initialization
-            window.devfolio.init();
-          }
-        }, 1000);
-      } else {
-        console.log("Waiting for Devfolio SDK to load...");
-        setTimeout(initDevfolioButton, 500);
-      }
-    };
-
-    // Start initialization process
-    initDevfolioButton();
-
-    return () => {
-      // Cleanup if needed
-    };
-  }, []);
-
   return (
     <section id="home" className="min-h-screen relative flex flex-col items-center justify-center pt-16 pb-8 overflow-hidden px-4">
       <div ref={gridRef} className="grid-background animate-grid-fade"></div>
@@ -92,32 +52,16 @@ const HeroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-4 md:mt-6 w-full justify-center items-center">
-            {/* Properly implemented Devfolio button - strictly following docs */}
+            {/* Implementation as per Devfolio documentation */}
             <div 
-              id="devfolio-apply-now" 
-              className="devfolio-button-container"
+              className="apply-button" 
+              data-hackathon-slug="hack-quanta" 
+              data-button-theme="light"
               style={{
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                minHeight: '44px',
                 height: '44px',
-                width: '312px',
-                minWidth: '312px'
+                width: '312px'
               }}
-            >
-              <button 
-                className="apply-button" 
-                data-hackathon-slug="hack-quanta" 
-                data-button-theme="dark-inverted"
-                style={{
-                  height: '44px',
-                  width: '312px'
-                }}
-              >
-                <span>Apply with Devfolio</span>
-              </button>
-            </div>
+            ></div>
             
             <a href="#about" className="px-4 sm:px-6 py-3 border border-neon-cyan/30 text-center hover:border-neon-cyan hover:scale-105 transition-all duration-300 font-display">
               LEARN MORE

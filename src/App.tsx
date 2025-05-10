@@ -8,24 +8,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
-// Create a custom event to trigger Devfolio button initialization
-const triggerDevfolioInit = () => {
-  setTimeout(() => {
-    if (window.devfolio) {
-      console.log("Triggering Devfolio init from App component");
-      window.devfolio.init();
-    }
-  }, 2000); // Wait for DOM to be fully rendered
-};
-
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Trigger Devfolio initialization when App loads
-  useEffect(() => {
-    triggerDevfolioInit();
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
