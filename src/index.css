@@ -257,30 +257,3 @@
     background-size: 30px 30px;
   }
 }
-
-/* Devfolio button styling */
-.devfolio-button-container {
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  box-shadow: 0 0 8px rgba(0, 255, 255, 0.4) !important;
-  border-radius: 4px !important;
-}
-
-.apply-button {
-  height: 44px !important;
-  width: 312px !important;
-  border: none !important;
-  font-weight: bold !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border-radius: 4px !important;
-}
-
-/* Override iframe styles if needed */
-.apply-button iframe {
-  height: 44px !important;
-  width: 312px !important;
-  border: none !important;
-}
