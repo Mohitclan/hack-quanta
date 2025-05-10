@@ -25,31 +25,24 @@ const HeroSection = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [isMobile]);
 
-  // Added for Devfolio button initialization - following the documentation
+  // Improved Devfolio initialization
   useEffect(() => {
-    const script = document.querySelector('script[src="https://apply.devfolio.co/v2/sdk.js"]');
-    
-    const handleLoad = () => {
+    // Check if Devfolio script is loaded
+    const checkDevfolioAndInit = () => {
       if (window.devfolio) {
         window.devfolio.init();
-        
-        // Add console log for debugging
-        console.log('Devfolio SDK initialized');
+        console.log('Devfolio SDK initialized successfully');
       } else {
-        console.log('Devfolio SDK not found after script loaded');
+        console.log('Waiting for Devfolio SDK to load...');
+        setTimeout(checkDevfolioAndInit, 500);
       }
     };
 
-    if (script) {
-      script.addEventListener('load', handleLoad);
-    } else {
-      console.log('Devfolio script not found in DOM');
-    }
+    // Start checking once the component is mounted
+    checkDevfolioAndInit();
 
     return () => {
-      if (script) {
-        script.removeEventListener('load', handleLoad);
-      }
+      // Cleanup if needed
     };
   }, []);
 
@@ -80,13 +73,17 @@ const HeroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-4 md:mt-6 w-full justify-center items-center">
-            {/* Devfolio Apply Button styled to match documentation */}
+            {/* Updated Apply Button with inline styles to ensure visibility */}
             <div 
-              className="apply-button cursor-pointer" 
+              id="devfolio-apply-now"
+              className="apply-button cursor-pointer shadow-glow-sm bg-white rounded-md flex items-center justify-center"
               data-hackathon-slug="hack-quanta" 
               data-button-theme="dark-inverted"
-              style={{ height: "44px", width: "312px" }}
-            ></div>
+              style={{ height: "44px", width: "312px", minHeight: "44px", minWidth: "312px" }}
+            >
+              {/* Fallback content in case button doesn't load */}
+              <span className="text-center font-bold text-black">Apply with Devfolio</span>
+            </div>
             
             <a href="#about" className="px-4 sm:px-6 py-3 border border-neon-cyan/30 text-center hover:border-neon-cyan hover:scale-105 transition-all duration-300 font-display">
               LEARN MORE
