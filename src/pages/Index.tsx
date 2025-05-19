@@ -4,6 +4,8 @@ import NavBar from '@/components/NavBar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import ComingSoonSection from '@/components/ComingSoonSection';
+import SponsorsSection from '@/components/SponsorsSection';
+import TrackSection from '@/components/TrackSection'
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -49,10 +51,12 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden pt-24">
       <NavBar />
       <HeroSection />
       <AboutSection />
+      <SponsorsSection />
+      <TrackSection />
       <ComingSoonSection />
       <Footer />
     </div>

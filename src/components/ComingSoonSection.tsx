@@ -64,7 +64,7 @@ const ComingSoonSection = () => {
     <section 
       id="comingsoon" 
       ref={sectionRef} 
-      className="min-h-[40vh] relative flex flex-col items-center justify-center py-6 overflow-hidden mt-[-2rem]"
+      className="min-h-[60vh] relative flex flex-col items-center justify-center py-24 px-4 overflow-hidden"
     >
       {/* Animated grid background */}
       <div className="grid-background animate-grid-fade"></div>
@@ -87,18 +87,17 @@ const ComingSoonSection = () => {
       
       <div 
         ref={contentRef} 
-        className="container mx-auto px-4 z-10 text-center opacity-0 translate-y-10 transition-all duration-1000 transform"
+        className="container mx-auto z-10 text-center opacity-0 translate-y-10 transition-all duration-1000 transform max-w-4xl"
       >
         <h2 
           ref={glitchRef}
-          className="text-4xl md:text-5xl lg:text-8xl font-display tracking-widest mb-8"
+          className="text-4xl md:text-5xl lg:text-7xl font-display tracking-widest mb-8"
         >
           <span className="neon-text">COMING</span>
           <span className="neon-text-cyan ml-2 md:ml-4">SOON</span>
         </h2>
         
-        <div className="mt-6">
-          <p className="text-gray-300 mb-6"></p>
+        <div className="mt-8">
           <a 
             href="https://devfolio.co" 
             target="_blank"
@@ -106,7 +105,7 @@ const ComingSoonSection = () => {
             className="cyber-box inline-block px-8 py-3 font-display hover:scale-105 transition-transform duration-300"
           >
             <span className="bg-gradient-to-r from-neon-pink to-neon-cyan bg-clip-text text-transparent animate-text-shimmer">
-              GET NOTIFIED
+              Apply with devfolio
             </span>
           </a>
         </div>
