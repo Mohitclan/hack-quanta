@@ -56,25 +56,25 @@ const Footer = () => {
             <h4 className="neon-text font-display text-lg mb-4">CONTACT US</h4>
             <address className="not-italic text-gray-300">
               <p className="mb-2 flex items-start">
-                <span className="mr-2 text-neon-pink">◉</span>
+                <span className="mr-2 text-neon-pink"></span>
                 <a 
                   href="https://www.bing.com/maps?&ty=0&rtp=~pos.28.466133_77.48307__JIMS%20Engineering%20Management%20Technical%20Campus__e_&mode=d&u=1&tt=Directions&tsts0=%2526ty%253D0%2526rtp%253D~pos.28.466133_77.48307__JIMS%252520Engineering%252520Management%252520Technical%252520Campus__e_%2526mode%253Dd%2526u%253D1&tstt0=Directions&cp=28.466157~77.471146&lvl=14.5&pi=0&ftst=0&ftics=False&v=2&sV=2&form=S00027" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:text-neon-pink transition-colors flex items-center"
                 >
-                  <MapPin size={14} className="mr-1 inline" />
+                
                   JIMS Engineering Management Technical Campus, Greater Noida
                 </a>
               </p>
               <p className="mb-2 flex items-start">
-                <span className="mr-2 text-neon-cyan">◉</span>
+                <span className="mr-2 text-neon-cyan"></span>
                 <a href="mailto:info@hackquanta.com" className="hover:text-neon-cyan transition-colors">
                   info@hackquanta.com
                 </a>
               </p>
               <p className="mb-2 flex items-start">
-                <span className="mr-2 text-neon-pink">◉</span>
+                <span className="mr-2 text-neon-pink"></span>
                 <a href="https://www.instagram.com/hackquanta?igsh=OGoxdWQ5cXppanU2&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-neon-pink flex items-center">
                   <Instagram size={14} className="mr-1" /> 
                   Follow us
