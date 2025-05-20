@@ -54,7 +54,7 @@ const NavBar = () => {
                 <Info size={18} />
                 <span>About</span>
               </a>
-              <a href="#comingsoon" className="text-white hover:text-neon-cyan transition-colors flex items-center gap-2">
+              <a href="#tracks" className="text-white hover:text-neon-cyan transition-colors flex items-center gap-2">
                 <ListOrdered size={18} />
                 <span>Tracks</span>
               </a>
@@ -85,7 +85,7 @@ const NavBar = () => {
                   <Info size={18} />
                   <span>About</span>
                 </a>
-                <a href="#comingsoon" className="text-white hover:text-neon-cyan transition-colors py-2 flex items-center gap-2">
+                <a href="#tracks" className="text-white hover:text-neon-cyan transition-colors py-2 flex items-center gap-2">
                   <ListOrdered size={18} />
                   <span>Tracks</span>
                 </a>

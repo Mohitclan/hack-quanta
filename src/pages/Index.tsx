@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import ComingSoonSection from '@/components/ComingSoonSection';
 import SponsorsSection from '@/components/SponsorsSection';
+import TrackSection from '@/components/TrackSection'
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -55,6 +56,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <SponsorsSection />
+      <TrackSection />
       <ComingSoonSection />
       <Footer />
     </div>
