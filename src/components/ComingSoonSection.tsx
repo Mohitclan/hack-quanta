@@ -99,7 +99,7 @@ const ComingSoonSection = () => {
         
         <div className="mt-8">
           <a 
-            href="https://devfolio.co" 
+            href="https://hack-quanta.devfolio.co/" 
             target="_blank"
             rel="noopener noreferrer"
             className="cyber-box inline-block px-8 py-3 font-display hover:scale-105 transition-transform duration-300"
