@@ -77,6 +77,7 @@ const HeroSection = () => {
             <div 
               id="devfolio-apply-now"
               className="apply-button cursor-pointer shadow-glow-sm bg-white rounded-md flex items-center justify-center"
+                 href="https://hack-quanta.devfolio.co/" 
               data-hackathon-slug="hack-quanta" 
               data-button-theme="dark-inverted"
               style={{ height: "44px", width: "312px", minHeight: "44px", minWidth: "312px" }}
