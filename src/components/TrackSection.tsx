@@ -1,48 +1,96 @@
+
 import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const TracksSection = () => {
-  const revealRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const revealCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
+    const ctx = gsap.context(() => {
+      // Title animation
+      gsap.fromTo(titleRef.current, {
+        y: 50,
+        opacity: 0,
+        scale: 0.9
+      }, {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse"
         }
       });
-    };
 
-    const observer = new IntersectionObserver(revealCallback, {
-      threshold: 0.1,
-    });
+      // Cards stagger animation
+      const cards = cardsRef.current?.children;
+      if (cards) {
+        gsap.fromTo(cards, {
+          y: 60,
+          opacity: 0,
+          rotationX: 45,
+          scale: 0.8
+        }, {
+          y: 0,
+          opacity: 1,
+          rotationX: 0,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          }
+        });
 
-    revealRefs.current.forEach(ref => {
-      if (ref) observer.observe(ref);
-    });
+        // Hover animations for cards
+        Array.from(cards).forEach((card) => {
+          const cardElement = card as HTMLElement;
+          
+          cardElement.addEventListener('mouseenter', () => {
+            gsap.to(cardElement, {
+              scale: 1.05,
+              rotationY: 5,
+              duration: 0.3,
+              ease: "power2.out"
+            });
+          });
 
-    return () => {
-      revealRefs.current.forEach(ref => {
-        if (ref) observer.unobserve(ref);
-      });
-    };
+          cardElement.addEventListener('mouseleave', () => {
+            gsap.to(cardElement, {
+              scale: 1,
+              rotationY: 0,
+              duration: 0.3,
+              ease: "power2.out"
+            });
+          });
+        });
+      }
+
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
-  const addRevealRef = (el: HTMLDivElement | null) => {
-    if (el && !revealRefs.current.includes(el)) {
-      revealRefs.current.push(el);
-    }
-  };
-
   return (
-    <section id="tracks" className="py-20 relative">
+    <section ref={sectionRef} id="tracks" className="py-20 relative">
       <div className="container mx-auto px-4">
-        <div ref={addRevealRef} className="reveal text-center mb-16">
+        <div ref={titleRef} className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-display mb-4 neon-text inline-block">INNOVATION TRACKS</h2>
           <div className="horizontal-line w-32 mx-auto my-4"></div>
-
         </div>
 
-        <div ref={addRevealRef} className="reveal grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div ref={cardsRef} className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {[
             {
               title: 'Finnovate',
@@ -81,7 +129,7 @@ const TracksSection = () => {
               description: 'The Borderless Innovation Track — unleashing creative solutions beyond industries, geographies & limits.',
             },
           ].map((track, index) => (
-            <div key={index} className="bg-cyber-darkPurple p-6 rounded-xl border border-cyan-400 shadow-md">
+            <div key={index} className="bg-cyber-darkPurple p-6 rounded-xl border border-cyan-400 shadow-md cursor-pointer">
               <h3 className="text-xl font-bold mb-2 text-neon-cyan">{track.title}</h3>
               <p className="text-gray-300 text-sm">{track.description}</p>
             </div>

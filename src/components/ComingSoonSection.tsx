@@ -1,63 +1,96 @@
 
 import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ComingSoonSection = () => {
   const glitchRef = useRef<HTMLHeadingElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const glitchElement = glitchRef.current;
-    if (!glitchElement) return;
-
-    let glitchInterval: NodeJS.Timeout;
-    
-    const startGlitchEffect = () => {
-      // Random glitch effect
-      const applyGlitch = () => {
-        if (!glitchElement) return;
-        
-        const glitchChance = Math.random();
-        if (glitchChance > 0.5) {
-          glitchElement.classList.add('animate-glitch');
-          glitchElement.style.textShadow = `
-            ${Math.random() * 10 - 5}px ${Math.random() * 10 - 5}px ${Math.random() * 10}px rgba(255, 0, 204, 0.8),
-            ${Math.random() * 10 - 5}px ${Math.random() * 10 - 5}px ${Math.random() * 10}px rgba(0, 255, 255, 0.8)
-          `;
-          
-          setTimeout(() => {
-            if (glitchElement) {
-              glitchElement.classList.remove('animate-glitch');
-              glitchElement.style.textShadow = '';
-            }
-          }, 200);
+    const ctx = gsap.context(() => {
+      // Main content entrance
+      gsap.fromTo(contentRef.current, {
+        opacity: 0,
+        y: 100,
+        scale: 0.8
+      }, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse"
         }
-      };
-      
-      glitchInterval = setInterval(applyGlitch, 3000);
-    };
+      });
 
-    const observer = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        startGlitchEffect();
-        if (contentRef.current) {
-          contentRef.current.classList.add('opacity-100', 'translate-y-0');
-        }
-      } else {
-        clearInterval(glitchInterval);
+      // Glitch title animation
+      if (glitchRef.current) {
+        // Continuous subtle animation
+        gsap.to(glitchRef.current, {
+          textShadow: "2px 2px 0px rgba(255, 0, 204, 0.8), -2px -2px 0px rgba(0, 255, 255, 0.8)",
+          duration: 0.1,
+          repeat: -1,
+          yoyo: true,
+          repeatDelay: 3
+        });
+
+        // Random glitch bursts
+        const glitchTimeline = gsap.timeline({ repeat: -1, repeatDelay: 4 });
+        glitchTimeline
+          .to(glitchRef.current, {
+            x: 5,
+            duration: 0.05
+          })
+          .to(glitchRef.current, {
+            x: -5,
+            duration: 0.05
+          })
+          .to(glitchRef.current, {
+            x: 0,
+            duration: 0.05
+          })
+          .to(glitchRef.current, {
+            textShadow: "5px 0px 0px rgba(255, 0, 204, 0.8), -5px 0px 0px rgba(0, 255, 255, 0.8)",
+            duration: 0.1
+          })
+          .to(glitchRef.current, {
+            textShadow: "0px 0px 10px rgba(255, 0, 204, 0.8), 0px 0px 10px rgba(0, 255, 255, 0.8)",
+            duration: 0.1
+          });
       }
-    }, { threshold: 0.1 });
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+      // Button hover animation
+      if (buttonRef.current) {
+        buttonRef.current.addEventListener('mouseenter', () => {
+          gsap.to(buttonRef.current, {
+            scale: 1.1,
+            rotationY: 10,
+            duration: 0.3,
+            ease: "back.out(1.7)"
+          });
+        });
 
-    return () => {
-      clearInterval(glitchInterval);
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+        buttonRef.current.addEventListener('mouseleave', () => {
+          gsap.to(buttonRef.current, {
+            scale: 1,
+            rotationY: 0,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
       }
-    };
+
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -66,10 +99,8 @@ const ComingSoonSection = () => {
       ref={sectionRef} 
       className="min-h-[60vh] relative flex flex-col items-center justify-center py-24 px-4 overflow-hidden"
     >
-      {/* Animated grid background */}
       <div className="grid-background animate-grid-fade"></div>
       
-      {/* Animated data lines in the background */}
       <div className="datalines">
         {[...Array(20)].map((_, i) => (
           <div 
@@ -87,7 +118,7 @@ const ComingSoonSection = () => {
       
       <div 
         ref={contentRef} 
-        className="container mx-auto z-10 text-center opacity-0 translate-y-10 transition-all duration-1000 transform max-w-4xl"
+        className="container mx-auto z-10 text-center max-w-4xl"
       >
         <h2 
           ref={glitchRef}
@@ -99,10 +130,11 @@ const ComingSoonSection = () => {
         
         <div className="mt-8">
           <a 
+            ref={buttonRef}
             href="https://hack-quanta.devfolio.co/" 
             target="_blank"
             rel="noopener noreferrer"
-            className="cyber-box inline-block px-8 py-3 font-display hover:scale-105 transition-transform duration-300"
+            className="cyber-box inline-block px-8 py-3 font-display transition-transform duration-300"
           >
             <span className="bg-gradient-to-r from-neon-pink to-neon-cyan bg-clip-text text-transparent animate-text-shimmer">
               Apply with devfolio

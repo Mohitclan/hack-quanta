@@ -1,53 +1,107 @@
 
 import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection = () => {
-  const revealRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLParagraphElement>(null);
+  const boxRef = useRef<HTMLDivElement>(null);
+  const quoteRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const revealCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
+    const ctx = gsap.context(() => {
+      // Title animation with scroll trigger
+      gsap.fromTo(titleRef.current, {
+        y: 50,
+        opacity: 0,
+        scale: 0.8
+      }, {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
         }
       });
-    };
 
-    const observer = new IntersectionObserver(revealCallback, {
-      threshold: 0.1,
-    });
-
-    revealRefs.current.forEach(ref => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      revealRefs.current.forEach(ref => {
-        if (ref) observer.unobserve(ref);
+      // Text reveal animation
+      gsap.fromTo(textRef.current, {
+        y: 30,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        }
       });
-    };
+
+      // Box slide in from left
+      gsap.fromTo(boxRef.current, {
+        x: -100,
+        opacity: 0,
+        rotationY: -15
+      }, {
+        x: 0,
+        opacity: 1,
+        rotationY: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: boxRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        }
+      });
+
+      // Quote fade in with typewriter effect
+      gsap.fromTo(quoteRef.current, {
+        opacity: 0,
+        y: 20
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: quoteRef.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        }
+      });
+
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
-  const addRevealRef = (el: HTMLDivElement | null) => {
-    if (el && !revealRefs.current.includes(el)) {
-      revealRefs.current.push(el);
-    }
-  };
-
   return (
-    <section id="about" className="py-20 relative">
+    <section ref={sectionRef} id="about" className="py-20 relative">
       <div className="container mx-auto px-4">
-        <div ref={addRevealRef} className="reveal mb-16 text-center">
+        <div ref={titleRef} className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-display mb-4 neon-text inline-block">ABOUT THE HACKATHON</h2>
           <div className="horizontal-line w-32 mx-auto my-4"></div>
-          <p className="max-w-3xl mx-auto text-gray-300 text-sm md:text-base">
+          <p ref={textRef} className="max-w-3xl mx-auto text-gray-300 text-sm md:text-base">
            HACKQUANTA is a 36-hour overnight hackathon where participants collaborate to solve real-world problems and build innovative solutions.
             Join us for an unforgettable experience of
             creativity, technology, and teamwork.
           </p>
         </div>
 
-        <div ref={addRevealRef} className="reveal mb-16">
+        <div ref={boxRef} className="mb-16">
           <div className="cyber-box p-1 md:p-2">
             <div className="bg-cyber-darkPurple p-4 md:p-6 flex flex-col md:flex-row gap-6 md:gap-8">
               <div className="flex-1">
@@ -78,7 +132,7 @@ const AboutSection = () => {
           </div>
         </div>
         
-        <div ref={addRevealRef} className="reveal text-center">
+        <div ref={quoteRef} className="text-center">
           <div className="horizontal-line w-32 mx-auto my-6"></div>
           <blockquote className="max-w-2xl mx-auto">
             <p className="text-lg md:text-xl text-white italic">
