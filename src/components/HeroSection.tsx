@@ -13,7 +13,85 @@ const HeroSection = () => {
   const titleRef = useRef<HTMLDivElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
+  const hackRef = useRef<HTMLSpanElement>(null);
+  const quantaRef = useRef<HTMLSpanElement>(null);
   const isMobile = useIsMobile();
+
+  // Function to split text into spans for each character
+  const splitTextIntoChars = (element: HTMLElement) => {
+    const text = element.textContent || '';
+    element.innerHTML = '';
+    
+    text.split('').forEach((char, index) => {
+      const span = document.createElement('span');
+      span.textContent = char === ' ' ? '\u00A0' : char; // Non-breaking space
+      span.style.display = 'inline-block';
+      span.style.position = 'relative';
+      span.setAttribute('data-char-index', index.toString());
+      element.appendChild(span);
+    });
+  };
+
+  useEffect(() => {
+    // Split text into characters for shatter effect
+    if (hackRef.current && quantaRef.current) {
+      splitTextIntoChars(hackRef.current);
+      splitTextIntoChars(quantaRef.current);
+
+      // Add hover effects
+      const addShatterEffect = (element: HTMLElement) => {
+        const chars = element.children;
+        
+        const handleMouseEnter = () => {
+          gsap.to(chars, {
+            duration: 0.6,
+            x: () => gsap.utils.random(-50, 50),
+            y: () => gsap.utils.random(-30, 30),
+            rotation: () => gsap.utils.random(-45, 45),
+            scale: () => gsap.utils.random(0.8, 1.2),
+            opacity: () => gsap.utils.random(0.3, 1),
+            ease: "power2.out",
+            stagger: {
+              amount: 0.3,
+              from: "random"
+            }
+          });
+        };
+
+        const handleMouseLeave = () => {
+          gsap.to(chars, {
+            duration: 0.8,
+            x: 0,
+            y: 0,
+            rotation: 0,
+            scale: 1,
+            opacity: 1,
+            ease: "elastic.out(1, 0.3)",
+            stagger: {
+              amount: 0.4,
+              from: "random"
+            }
+          });
+        };
+
+        element.addEventListener('mouseenter', handleMouseEnter);
+        element.addEventListener('mouseleave', handleMouseLeave);
+
+        return () => {
+          element.removeEventListener('mouseenter', handleMouseEnter);
+          element.removeEventListener('mouseleave', handleMouseLeave);
+        };
+      };
+
+      const cleanupHack = addShatterEffect(hackRef.current);
+      const cleanupQuanta = addShatterEffect(quantaRef.current);
+
+      return () => {
+        cleanupHack();
+        cleanupQuanta();
+      };
+    }
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -129,8 +207,8 @@ const HeroSection = () => {
         <div className="w-full flex flex-col items-center justify-center">
           <div ref={titleRef} className="mb-10 md:mb-12">
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-display tracking-wider text-center">
-              <span className="neon-text block">HACK</span>
-              <span className="neon-text-cyan block mt-2">QUANTA</span>
+              <span ref={hackRef} className="neon-text block cursor-pointer select-none">HACK</span>
+              <span ref={quantaRef} className="neon-text-cyan block mt-2 cursor-pointer select-none">QUANTA</span>
               <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl block mt-6 chrome-text">DATA. DYSTOPIA. DOMINANCE</span>
             </h1>
           </div>
