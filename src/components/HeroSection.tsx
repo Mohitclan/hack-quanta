@@ -149,17 +149,16 @@ const HeroSection = () => {
 
           <div ref={buttonRef} className="flex flex-col sm:flex-row gap-4 mt-4 md:mt-6 w-full justify-center items-center">
             {/* Updated Apply Button with inline styles to ensure visibility */}
-            <div 
-              id="devfolio-apply-now"
-              className="apply-button cursor-pointer shadow-glow-sm bg-white rounded-md flex items-center justify-center"
+            <a 
               href="https://hack-quanta.devfolio.co/" 
-              data-hackathon-slug="hack-quanta" 
-              data-button-theme="dark-inverted"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="apply-button cursor-pointer shadow-glow-sm bg-white rounded-md flex items-center justify-center"
               style={{ height: "44px", width: "312px", minHeight: "44px", minWidth: "312px" }}
             >
               {/* Fallback content in case button doesn't load */}
               <span className="text-center font-bold text-black">Apply with Devfolio</span>
-            </div>
+            </a>
             
             <a href="#about" className="px-4 sm:px-6 py-3 border border-neon-cyan/30 text-center hover:border-neon-cyan hover:scale-105 transition-all duration-300 font-display">
               LEARN MORE
