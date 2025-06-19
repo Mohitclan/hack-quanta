@@ -65,8 +65,16 @@ export default {
 				},
 			},
 			fontFamily: {
-				'cyber': ['Chakra Petch', 'Space Grotesk', 'sans-serif'],
-				'display': ['Orbitron', 'Syncopate', 'sans-serif'],
+				'cyber': ['Rajdhani', 'Chakra Petch', 'Space Grotesk', 'sans-serif'],
+				'display': ['Rajdhani', 'Orbitron', 'Syncopate', 'sans-serif'],
+				'sans': ['Rajdhani', 'Inter', 'system-ui', 'sans-serif'],
+			},
+			fontWeight: {
+				'normal': '500',
+				'medium': '600',
+				'semibold': '700',
+				'bold': '800',
+				'extrabold': '900',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
