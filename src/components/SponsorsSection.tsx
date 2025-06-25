@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const SponsorsSection = () => {
@@ -60,7 +59,7 @@ const SponsorsSection = () => {
         <div className="mt-16 text-center">
           <h3 className="text-xl font-display text-white mb-4">INTERESTED IN SPONSORING?</h3>
           <a 
-            href="#contact" 
+            href="mailto:Hackquanta@gmail.com"
             className="inline-block cyber-box px-6 py-3 font-display hover:scale-105 transition-transform duration-300"
           >
             CONTACT US
