@@ -40,25 +40,26 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     return () => clearTimeout(timer);
   });
 
-  const renderTimeBlock = (value: number, label: string, glowClass: string) => (
-    <div className="flex flex-col items-center p-1 sm:p-2">
-      <div className="cyber-box mb-1 sm:mb-2 w-full p-1">
-        <div className="bg-cyber-darkPurple p-1 sm:p-3 w-full">
-          <span className={`text-lg sm:text-xl md:text-3xl font-display ${glowClass}`}>
+  const renderTimeBlock = (value: number, label: string, glowClass: string, bgColor: string) => (
+    <div className="flex flex-col items-center p-1 sm:p-2 group">
+      <div className="cyber-box mb-2 w-full p-1 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+        <div className={`${bgColor} p-3 sm:p-4 w-full relative z-10 rounded-sm`}>
+          <span className={`text-xl sm:text-2xl md:text-4xl font-display font-black ${glowClass} block text-center tracking-wider`}>
             {value.toString().padStart(2, '0')}
           </span>
         </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-neon-pink/20 via-neon-cyan/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
-      <span className="text-xs md:text-sm text-gray-300 uppercase tracking-wider">{label}</span>
+      <span className="text-xs sm:text-sm md:text-base text-gray-300 uppercase tracking-widest font-display font-bold">{label}</span>
     </div>
   );
 
   return (
-    <div className="flex justify-center gap-1 sm:gap-2 md:gap-4 w-full px-1">
-      {renderTimeBlock(timeLeft.days, 'Days', 'animate-pulse-glow')}
-      {renderTimeBlock(timeLeft.hours, 'Hours', 'animate-pulse-glow-cyan')}
-      {renderTimeBlock(timeLeft.minutes, 'Minutes', 'animate-pulse-glow')}
-      {renderTimeBlock(timeLeft.seconds, 'Seconds', 'animate-pulse-glow-cyan')}
+    <div className="flex justify-center gap-2 sm:gap-3 md:gap-6 w-full px-2 py-4">
+      {renderTimeBlock(timeLeft.days, 'Days', 'neon-text', 'bg-gradient-to-br from-cyber-darkPurple to-cyber-purple')}
+      {renderTimeBlock(timeLeft.hours, 'Hours', 'neon-text-cyan', 'bg-gradient-to-br from-cyber-purple to-cyber-darkPurple')}
+      {renderTimeBlock(timeLeft.minutes, 'Minutes', 'neon-text', 'bg-gradient-to-br from-cyber-darkPurple to-cyber-purple')}
+      {renderTimeBlock(timeLeft.seconds, 'Seconds', 'neon-text-cyan', 'bg-gradient-to-br from-cyber-purple to-cyber-darkPurple')}
     </div>
   );
 };
