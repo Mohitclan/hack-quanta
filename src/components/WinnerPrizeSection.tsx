@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Trophy, Medal, Award, Crown } from 'lucide-react';
+import { Trophy, Award, Gift, FileText, Star } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,7 +10,7 @@ const WinnerPrizeSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const trophyRef = useRef<HTMLDivElement>(null);
-  const prizesRef = useRef<HTMLDivElement>(null);
+  const additionalPrizesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -52,6 +53,29 @@ const WinnerPrizeSection = () => {
           }
         }
       );
+
+      // Additional prizes animation
+      if (additionalPrizesRef.current) {
+        gsap.fromTo(additionalPrizesRef.current.children,
+          {
+            opacity: 0,
+            y: 30,
+            scale: 0.9
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: additionalPrizesRef.current,
+              start: "top 85%",
+            }
+          }
+        );
+      }
 
     }, sectionRef);
 
@@ -99,26 +123,83 @@ const WinnerPrizeSection = () => {
         </div>
 
         {/* Main Trophy */}
-        <div className="text-center">
+        <div className="text-center mb-20">
           <div 
             ref={trophyRef}
-            className="inline-flex flex-col items-center p-12 cyber-box bg-gradient-to-br from-yellow-900/30 to-yellow-700/30 border-2 border-yellow-400/40 hover:border-yellow-400/80 transition-all duration-500"
+            className="inline-flex flex-col items-center p-16 cyber-box bg-gradient-to-br from-yellow-900/40 via-yellow-800/30 to-yellow-900/40 border-2 border-yellow-400/50 hover:border-yellow-400/90 hover:shadow-[0_0_50px_rgba(250,204,21,0.4)] transition-all duration-700 group"
           >
-            <div className="relative mb-6">
-              <Trophy className="w-32 h-32 md:w-40 md:h-40 text-yellow-400" />
-              <div className="absolute inset-0 bg-yellow-400/20 rounded-full blur-3xl"></div>
-              <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center border-2 border-yellow-300">
-                <span className="text-black font-bold text-lg">1st</span>
+            <div className="relative mb-8 group-hover:scale-110 transition-transform duration-500">
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/30 to-yellow-500/30 rounded-full blur-2xl scale-150"></div>
+              <Trophy className="w-36 h-36 md:w-48 md:h-48 text-yellow-400 relative z-10 drop-shadow-[0_0_30px_rgba(250,204,21,0.6)]" />
+              <div className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 rounded-full flex items-center justify-center border-4 border-yellow-300 shadow-[0_0_20px_rgba(250,204,21,0.8)]">
+                <span className="text-black font-bold text-xl">1st</span>
+              </div>
+              {/* Crown decoration */}
+              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                <Star className="w-8 h-8 text-yellow-300 animate-pulse" />
               </div>
             </div>
-            <h3 className="text-4xl md:text-6xl font-display font-black text-yellow-400 mb-4">
+            <h3 className="text-5xl md:text-7xl font-display font-black text-yellow-400 mb-6 tracking-wider drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
               FIRST PRIZE
             </h3>
-            <p className="text-6xl md:text-8xl font-display font-black bg-gradient-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent mb-4">
-              $1,000
-            </p>
-            <p className="text-2xl text-gray-300 font-semibold">Winner Takes All</p>
+            <div className="relative">
+              <p className="text-7xl md:text-9xl font-display font-black bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-300 bg-clip-text text-transparent mb-6 drop-shadow-[0_0_20px_rgba(250,204,21,0.3)]">
+                $1,000
+              </p>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/10 to-transparent blur-xl"></div>
+            </div>
+            <p className="text-2xl text-gray-300 font-semibold tracking-wide uppercase">Winner Takes All</p>
+            <div className="flex items-center gap-2 mt-4 text-yellow-400">
+              <Star className="w-5 h-5" />
+              <span className="text-lg font-medium">Grand Champion</span>
+              <Star className="w-5 h-5" />
+            </div>
           </div>
+        </div>
+
+        {/* Additional Prizes */}
+        <div ref={additionalPrizesRef} className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Certificates */}
+          <Card className="cyber-box bg-gradient-to-br from-blue-900/20 to-cyan-900/20 border-2 border-cyan-400/40 hover:border-cyan-400/70 transition-all duration-500 group">
+            <CardContent className="p-8 text-center">
+              <div className="relative mb-6 group-hover:scale-110 transition-transform duration-300">
+                <FileText className="w-20 h-20 text-cyan-400 mx-auto drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]" />
+                <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-xl"></div>
+              </div>
+              <h4 className="text-2xl md:text-3xl font-display font-bold text-cyan-400 mb-4">
+                CERTIFICATES
+              </h4>
+              <p className="text-lg text-gray-300 mb-4">
+                Digital Achievement Certificates
+              </p>
+              <div className="space-y-2 text-gray-400">
+                <p>• Winner Certificate</p>
+                <p>• Participation Certificate</p>
+                <p>• Skills Recognition</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Goodies */}
+          <Card className="cyber-box bg-gradient-to-br from-purple-900/20 to-pink-900/20 border-2 border-purple-400/40 hover:border-purple-400/70 transition-all duration-500 group">
+            <CardContent className="p-8 text-center">
+              <div className="relative mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Gift className="w-20 h-20 text-purple-400 mx-auto drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]" />
+                <div className="absolute inset-0 bg-purple-400/20 rounded-full blur-xl"></div>
+              </div>
+              <h4 className="text-2xl md:text-3xl font-display font-bold text-purple-400 mb-4">
+                GOODIES
+              </h4>
+              <p className="text-lg text-gray-300 mb-4">
+                Exclusive Hackathon Merchandise
+              </p>
+              <div className="space-y-2 text-gray-400">
+                <p>• Custom T-Shirts</p>
+                <p>• Branded Stickers</p>
+                <p>• Tech Accessories</p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
       </div>
