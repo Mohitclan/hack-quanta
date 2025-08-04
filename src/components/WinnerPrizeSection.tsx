@@ -11,9 +11,44 @@ const WinnerPrizeSection = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const trophyRef = useRef<HTMLDivElement>(null);
   const additionalPrizesRef = useRef<HTMLDivElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Create ScrollTrigger for music control
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top 80%",
+        end: "bottom 20%",
+        onEnter: () => {
+          // Play victory music when entering section
+          if (audioRef.current) {
+            audioRef.current.volume = 0.3;
+            audioRef.current.play().catch(console.error);
+          }
+        },
+        onLeave: () => {
+          // Stop music when leaving section (scrolling down)
+          if (audioRef.current) {
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0;
+          }
+        },
+        onEnterBack: () => {
+          // Play again when scrolling back up
+          if (audioRef.current) {
+            audioRef.current.play().catch(console.error);
+          }
+        },
+        onLeaveBack: () => {
+          // Stop music when leaving section (scrolling up)
+          if (audioRef.current) {
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0;
+          }
+        }
+      });
+
       // Title animation
       gsap.fromTo(titleRef.current, 
         { 
@@ -79,10 +114,29 @@ const WinnerPrizeSection = () => {
 
     }, sectionRef);
 
-    return () => ctx.revert();
+    return () => {
+      // Stop music and cleanup on unmount
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+      ctx.revert();
+    };
   }, []);
 
   return (
+    <>
+      {/* Hidden audio element for victory music */}
+      <audio 
+        ref={audioRef}
+        loop
+        preload="auto"
+        className="hidden"
+      >
+        <source src="https://www.soundjay.com/misc/sounds/fanfare.wav" type="audio/wav" />
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmccBjiS2PK+dSMFKnbH8N2QQAoUXrTp66hVFApGn+DyvmccBg==" type="audio/wav" />
+      </audio>
+      
     <section ref={sectionRef} className="relative py-20 bg-gradient-to-b from-black via-yellow-900/5 to-black overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
@@ -204,6 +258,7 @@ const WinnerPrizeSection = () => {
 
       </div>
     </section>
+    </>
   );
 };
 
