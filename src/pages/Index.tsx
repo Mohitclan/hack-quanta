@@ -5,7 +5,10 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import ComingSoonSection from '@/components/ComingSoonSection';
 import SponsorsSection from '@/components/SponsorsSection';
-import TrackSection from '@/components/TrackSection'
+import TrackSection from '@/components/TrackSection';
+import FAQSection from '@/components/FAQSection';
+import ScheduleSection from '@/components/ScheduleSection';
+import WinnerPrizeSection from '@/components/WinnerPrizeSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -55,8 +58,11 @@ const Index = () => {
       <NavBar />
       <HeroSection />
       <AboutSection />
-      <SponsorsSection />
+      <WinnerPrizeSection />
       <TrackSection />
+      <ScheduleSection />
+      <SponsorsSection />
+      <FAQSection />
       <ComingSoonSection />
       <Footer />
     </div>
