@@ -116,7 +116,7 @@ const SponsorsSection = () => {
                 className="transition-all duration-300 hover:opacity-80 p-5 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-sm"
               >
                 <img 
-                  src="/lovable-uploads/ca326016-780a-4275-88a4-29b33c35b887.png" 
+                  src="/lovable-uploads/d653be72-f839-4b1a-a9e6-624dd2816ce9.png" 
                   alt="XYZ Domains Logo" 
                   className="h-10 md:h-14 object-contain" 
                 />
@@ -140,7 +140,7 @@ const SponsorsSection = () => {
                 className="transition-all duration-300 hover:opacity-80 p-5 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-sm"
               >
                 <img 
-                  src="/lovable-uploads/03ec3668-a590-4a9e-a5d1-ea70ed6ab213.png" 
+                  src="/lovable-uploads/3504f0f9-b313-4fc4-a95a-7e7da5d23299.png" 
                   alt="The Tarot Magic Logo" 
                   className="h-10 md:h-14 object-contain" 
                 />
