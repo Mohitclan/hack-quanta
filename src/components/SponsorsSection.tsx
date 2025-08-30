@@ -12,140 +12,116 @@ const SponsorsSection = () => {
           </p>
         </div>
 
-        <div className="space-y-16">
-          {/* Gold Tier Sponsors */}
-          <div className="reveal">
-            <h3 className="text-xl font-display text-yellow-400 text-center mb-8">
-              <span className="border-b-2 border-yellow-400 pb-2 px-4">GOLD SPONSORS</span>
-            </h3>
-            <div className="flex flex-wrap justify-center items-center gap-12 mt-8">
-              <a 
-                href="https://www.pw.live/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-80 p-6 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-yellow-sm"
-              >
-                <img 
-                  src="/lovable-uploads/7c2a6da4-cee5-43de-90c5-6cdb63c133fd.png" 
-                  alt="Physics Wallah Logo" 
-                  className="h-16 md:h-24 object-contain" 
-                />
-              </a>
-              <a 
-                href="https://gen.xyz/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-80 p-6 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-yellow-sm"
-              >
-                <img 
-                  src="/lovable-uploads/d0434959-567d-402a-974d-550ede483bf8.png" 
-                  alt="Genesis Logo" 
-                  className="h-16 md:h-24 object-contain" 
-                />
-              </a>
-            </div>
-          </div>
-
-          {/* Silver Tier Sponsors */}
-          <div className="reveal">
-            <h3 className="text-xl font-display text-white text-center mb-8">
-              <span className="border-b-2 border-neon-cyan pb-2 px-4">SILVER SPONSORS</span>
-            </h3>
-            <div className="flex flex-wrap justify-center items-center gap-10 mt-8">
-              <a 
-                href="https://devfolio.co" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-80 p-6 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-cyan-sm"
-              >
-                <img 
-                  src="/lovable-uploads/0740d959-a9b6-41fa-aea9-a2c5286376ac.png" 
-                  alt="Devfolio Logo" 
-                  className="h-14 md:h-20 object-contain" 
-                />
-              </a>
-              <a 
-                href="https://interviewbuddy.in/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-80 p-6 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-cyan-sm"
-              >
-                <img 
-                  src="/lovable-uploads/605cfc9c-49c1-4ca1-9a78-fba174ac9338.png" 
-                  alt="Interview Buddy Logo" 
-                  className="h-14 md:h-20 object-contain" 
-                />
-              </a>
-              <a 
-                href="https://dualitytech.in/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-80 p-6 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-cyan-sm"
-              >
-                <img 
-                  src="/lovable-uploads/e2a95b39-4903-4a05-8424-bd126fa58100.png" 
-                  alt="Duality Logo" 
-                  className="h-14 md:h-20 object-contain" 
-                />
-              </a>
-            </div>
-          </div>
-
-          {/* Bronze Tier Sponsors */}
-          <div className="reveal">
-            <h3 className="text-xl font-display text-orange-400 text-center mb-8">
-              <span className="border-b-2 border-orange-400 pb-2 px-4">BRONZE SPONSORS</span>
-            </h3>
-            <div className="flex flex-wrap justify-center items-center gap-12 mt-8">
-              <a 
-                href="https://polygon.technology" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-80 p-5 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-sm"
-              >
-                <img 
-                  src="/lovable-uploads/4dc66ebf-0022-4ea8-a904-f6a8618468b4.png" 
-                  alt="ETHIndia Logo" 
-                  className="h-10 md:h-14 object-contain" 
-                />
-              </a>
-              <a 
-                href="https://gen.xyz/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-80 p-5 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-sm"
-              >
-                <img 
-                  src="/lovable-uploads/d653be72-f839-4b1a-a9e6-624dd2816ce9.png" 
-                  alt="XYZ Domains Logo" 
-                  className="h-10 md:h-14 object-contain" 
-                />
-              </a>
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-80 p-5 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-sm"
-              >
-                <img 
-                  src="/lovable-uploads/88fc5fde-fdb0-4da9-90fc-c9615dc04758.png" 
-                  alt="Cakes & More Logo" 
-                  className="h-10 md:h-14 object-contain" 
-                />
-              </a>
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-80 p-5 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-sm"
-              >
-                <img 
-                  src="/lovable-uploads/3504f0f9-b313-4fc4-a95a-7e7da5d23299.png" 
-                  alt="The Tarot Magic Logo" 
-                  className="h-10 md:h-14 object-contain" 
-                />
-              </a>
-            </div>
+        <div className="reveal">
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            <a 
+              href="https://www.pw.live/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:opacity-80 p-6 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-cyan-sm"
+            >
+              <img 
+                src="/lovable-uploads/7c2a6da4-cee5-43de-90c5-6cdb63c133fd.png" 
+                alt="Physics Wallah Logo" 
+                className="h-16 md:h-20 object-contain" 
+              />
+            </a>
+            <a 
+              href="https://gen.xyz/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:opacity-80 p-6 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-cyan-sm"
+            >
+              <img 
+                src="/lovable-uploads/d0434959-567d-402a-974d-550ede483bf8.png" 
+                alt="Genesis Logo" 
+                className="h-16 md:h-20 object-contain" 
+              />
+            </a>
+            <a 
+              href="https://devfolio.co" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:opacity-80 p-6 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-cyan-sm"
+            >
+              <img 
+                src="/lovable-uploads/0740d959-a9b6-41fa-aea9-a2c5286376ac.png" 
+                alt="Devfolio Logo" 
+                className="h-14 md:h-18 object-contain" 
+              />
+            </a>
+            <a 
+              href="https://interviewbuddy.in/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:opacity-80 p-6 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-cyan-sm"
+            >
+              <img 
+                src="/lovable-uploads/605cfc9c-49c1-4ca1-9a78-fba174ac9338.png" 
+                alt="Interview Buddy Logo" 
+                className="h-14 md:h-18 object-contain" 
+              />
+            </a>
+            <a 
+              href="https://dualitytech.in/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:opacity-80 p-6 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-cyan-sm"
+            >
+              <img 
+                src="/lovable-uploads/e2a95b39-4903-4a05-8424-bd126fa58100.png" 
+                alt="Duality Logo" 
+                className="h-14 md:h-18 object-contain" 
+              />
+            </a>
+            <a 
+              href="https://polygon.technology" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:opacity-80 p-5 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-cyan-sm"
+            >
+              <img 
+                src="/lovable-uploads/4dc66ebf-0022-4ea8-a904-f6a8618468b4.png" 
+                alt="ETHIndia Logo" 
+                className="h-12 md:h-16 object-contain" 
+              />
+            </a>
+            <a 
+              href="https://gen.xyz/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:opacity-80 p-5 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-cyan-sm"
+            >
+              <img 
+                src="/lovable-uploads/d653be72-f839-4b1a-a9e6-624dd2816ce9.png" 
+                alt="XYZ Domains Logo" 
+                className="h-12 md:h-16 object-contain" 
+              />
+            </a>
+            <a 
+              href="#" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:opacity-80 p-5 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-cyan-sm"
+            >
+              <img 
+                src="/lovable-uploads/88fc5fde-fdb0-4da9-90fc-c9615dc04758.png" 
+                alt="Cakes & More Logo" 
+                className="h-12 md:h-16 object-contain" 
+              />
+            </a>
+            <a 
+              href="#" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:opacity-80 p-5 bg-cyber-black bg-opacity-80 rounded-lg shadow-glow-cyan-sm"
+            >
+              <img 
+                src="/lovable-uploads/3504f0f9-b313-4fc4-a95a-7e7da5d23299.png" 
+                alt="The Tarot Magic Logo" 
+                className="h-12 md:h-16 object-contain" 
+              />
+            </a>
           </div>
         </div>
 
